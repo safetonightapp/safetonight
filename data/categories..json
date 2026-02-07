@@ -1,0 +1,62 @@
+[
+  {
+    "id": "shelter",
+    "title": "Shelter & Safe Sleep",
+    "summary": "Find shelters and safer options for tonight.",
+    "note": "We link out to trusted directories. Always confirm availability and hours."
+  },
+  {
+    "id": "food-today",
+    "title": "Food Today",
+    "summary": "Meal programs, food banks, and SNAP basics.",
+    "note": "Start with trusted directories; then use guides for low-cost food steps."
+  },
+  {
+    "id": "hygiene",
+    "title": "Hygiene & Laundry",
+    "summary": "Showers, laundry, restrooms, and basic hygiene steps.",
+    "note": "Public locations (libraries/community centers) are often safer starting points."
+  },
+  {
+    "id": "id-docs",
+    "title": "ID & Documents",
+    "summary": "Replace ID, birth certificate, and key paperwork.",
+    "note": "Rules vary; confirm with official agencies. Guides focus on steps and what to gather."
+  },
+  {
+    "id": "phone-internet",
+    "title": "Phone & Internet",
+    "summary": "Low-cost phone options, Wi-Fi, and keeping access stable.",
+    "note": "Avoid sharing passwords. Use official program sites where possible."
+  },
+  {
+    "id": "jobs-income",
+    "title": "Jobs & Income",
+    "summary": "Resume quickstart, job search, and safe income ideas.",
+    "note": "No illegal ideas. Safety-first and realistic."
+  },
+  {
+    "id": "grow-food",
+    "title": "Grow Food (Low-cost)",
+    "summary": "Microgreens and small-scale food growing basics.",
+    "note": "Education only. Follow food safety guidance."
+  },
+  {
+    "id": "build-library",
+    "title": "Build & Fix Library (Educational)",
+    "summary": "Open guides for basic builds and repairs (safe, legal, non-technical).",
+    "note": "No structural engineering promises. Use qualified help where needed."
+  },
+  {
+    "id": "safety",
+    "title": "Safety & Avoiding Scams",
+    "summary": "Personal safety, boundaries, scam avoidance.",
+    "note": "If you are in danger call 911. In crisis call/text 988."
+  },
+  {
+    "id": "resource-rails",
+    "title": "Trusted Resource Directories",
+    "summary": "Official or widely used directories (211, findhelp, etc.).",
+    "note": "These are external services; always confirm details."
+  }
+]
