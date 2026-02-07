@@ -59,59 +59,52 @@ function card(title, subtitle, bodyHtml){
 
 /* ----------------- Pages ----------------- */
 
-function renderHome(app){
+function renderResources(app){
+  // “Resource Links” page: safer than copying and maintaining lots of local listings early.
+  const mode = getModeFromHash();
+
+  let links = state.resources.filter(r => r.categoryId === "resource-rails");
+
+  // Optional mode filtering using tags in resources.json
+  if (mode === "tonight"){
+    const allow = new Set(["crisis","shelter","food","urgent","transport","medical","tonight","safety"]);
+    links = links.filter(r => (r.tags || []).some(t => allow.has(String(t).toLowerCase())));
+  }
+
+  if (mode === "safety"){
+    const allow = new Set(["safety","crisis","domestic","dv","medical","mental","legal","youth"]);
+    links = links.filter(r => (r.tags || []).some(t => allow.has(String(t).toLowerCase())));
+  }
+
+  const title = mode === "tonight"
+    ? "Tonight (fast): trusted directories"
+    : mode === "safety"
+      ? "Safety-first: trusted directories"
+      : "Trusted resource directories (start here)";
+
+  const subtitle = mode === "tonight"
+    ? "Urgent help for tonight"
+    : mode === "safety"
+      ? "Safer pathways and crisis resources"
+      : "These are external services";
+
   app.innerHTML = `
-    ${card("Start here (fast)", "Low data • large buttons • educational only", `
-      <div class="grid">
-        <a class="btn btn--danger" href="#/crisis">Crisis & Safety (988)</a>
-        <a class="btn btn--primary" href="#/guide/tonight-plan">Tonight Plan</a>
-        <a class="btn btn--primary" href="#/category/food-today">Food Today</a>
-        <a class="btn btn--primary" href="#/category/shelter">Shelter & Safe Sleep</a>
-        <a class="btn btn--primary" href="#/category/id-docs">ID & Documents</a>
-        <a class="btn btn--primary" href="#/category/jobs-income">Jobs & Income</a>
-      </div>
-      <div class="pills" aria-label="Quick tags">
-        <button class="pill" id="filter-tonight" type="button">Tonight</button>
-        <button class="pill pill--warn" id="filter-safety" type="button">Safety-first</button>
-        <span class="pill pill--muted">Santa Rosa + Escambia</span>
+    ${card(title, subtitle, `
+      <div class="small">
+        We link to trusted resource directories. We do not control these services.
+        Always confirm hours, eligibility, and availability.
       </div>
       <hr />
-      <div class="small">
-        This site links to trusted resource directories (like 211 and findhelp) and provides basic how-to guides.
-        Always confirm details with providers.
-      </div>
-    `)}
-
-    ${card("Browse categories", "Find what you need", `
-      <div class="grid">
-        ${state.categories.slice(0,6).map(c => `
-          <a class="btn" href="#/category/${esc(c.id)}">${esc(c.title)}</a>
-        `).join("")}
-      </div>
-      <div style="margin-top:10px">
-        <a class="btn btn--ghost" href="#/categories">See all categories</a>
-      </div>
-    `)}
-
-    ${card("Most used guides", "Short, step-by-step", `
       <div class="list">
-        ${state.guides.slice(0,5).map(g => `
-          <div class="item">
-            <div class="item__title">${esc(g.title)}</div>
-            <div class="item__meta">${esc(g.readTime)} • ${esc(g.level)}</div>
-            <div class="item__actions">
-              <a class="btn btn--primary" href="#/guide/${esc(g.id)}">Open guide</a>
-            </div>
-          </div>
-        `).join("")}
+        ${links.map(r => resourceCard(r)).join("")}
       </div>
-      <div style="margin-top:10px">
-        <a class="btn btn--ghost" href="#/guides">See all guides</a>
-      </div>
+      ${mode ? `
+        <hr />
+        <a class="btn btn--ghost" href="#/resources">Clear filter</a>
+      ` : ``}
     `)}
   `;
 }
-
 function renderCategories(app){
   app.innerHTML = `
     ${card("Categories", "Simple map of needs", `
@@ -352,4 +345,5 @@ function renderNotFound(app){
   window.addEventListener("hashchange", route);
   route();
 })();
+
 
