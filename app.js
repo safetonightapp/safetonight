@@ -71,8 +71,8 @@ function renderHome(app){
         <a class="btn btn--primary" href="#/category/jobs-income">Jobs & Income</a>
       </div>
       <div class="pills" aria-label="Quick tags">
-        <span class="pill">Tonight</span>
-        <span class="pill pill--warn">Safety-first</span>
+        <button class="pill" id="filter-tonight" type="button">Tonight</button>
+        <button class="pill pill--warn" id="filter-safety" type="button">Safety-first</button>
         <span class="pill pill--muted">Santa Rosa + Escambia</span>
       </div>
       <hr />
@@ -352,3 +352,4 @@ function renderNotFound(app){
   window.addEventListener("hashchange", route);
   route();
 })();
+
