@@ -26,9 +26,29 @@ function setBuildInfo(){
   el.textContent = `Build: ${new Date().toISOString().slice(0,10)}`;
 }
 
+function getModeFromHash(){
+  const hash = location.hash || "#/";
+  const q = (hash.split("?")[1] || "");
+  const params = new URLSearchParams(q);
+  return params.get("mode"); // "tonight" | "safety" | null
+}
+
+function wireQuickFilters(){
+  const tonightBtn = document.getElementById("filter-tonight");
+  const safetyBtn = document.getElementById("filter-safety");
+
+  tonightBtn?.addEventListener("click", () => {
+    location.hash = "#/resources?mode=tonight";
+  });
+
+  safetyBtn?.addEventListener("click", () => {
+    location.hash = "#/resources?mode=safety";
+  });
+}
+
 function route(){
   const hash = location.hash || "#/";
-  const [path, query] = hash.slice(2).split("?");
+  const [path] = hash.slice(2).split("?");
   const parts = path.split("/").filter(Boolean);
 
   const app = $("#app");
@@ -56,27 +76,9 @@ function card(title, subtitle, bodyHtml){
     </section>
   `;
 }
-function getModeFromHash(){
-  const hash = location.hash || "#/";
-  const q = (hash.split("?")[1] || "");
-  const params = new URLSearchParams(q);
-  return params.get("mode"); // "tonight" | "safety" | null
-}
-
-function wireQuickFilters(){
-  const tonightBtn = document.getElementById("filter-tonight");
-  const safetyBtn = document.getElementById("filter-safety");
-
-  tonightBtn?.addEventListener("click", () => {
-    location.hash = "#/resources?mode=tonight";
-  });
-
-  safetyBtn?.addEventListener("click", () => {
-    location.hash = "#/resources?mode=safety";
-  });
-}
 
 /* ----------------- Pages ----------------- */
+
 function renderHome(app){
   app.innerHTML = `
     ${card("Start here (fast)", "Low data • large buttons • educational only", `
@@ -135,6 +137,23 @@ function renderHome(app){
   wireQuickFilters();
 }
 
+function renderCategories(app){
+  app.innerHTML = `
+    ${card("Categories", "Simple map of needs", `
+      <div class="list">
+        ${state.categories.map(c => `
+          <div class="item">
+            <div class="item__title">${esc(c.title)}</div>
+            <div class="item__meta">${esc(c.summary)}</div>
+            <div class="item__actions">
+              <a class="btn btn--primary" href="#/category/${esc(c.id)}">Open</a>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `)}
+  `;
+}
 
 function renderCategory(app, categoryId){
   const cat = state.categories.find(c => c.id === categoryId);
@@ -187,10 +206,32 @@ function resourceCard(r){
 }
 
 function renderResources(app){
-  // “Resource Links” page: safer than copying and maintaining lots of local listings early.
-  const links = state.resources.filter(r => r.categoryId === "resource-rails");
+  const mode = getModeFromHash();
+
+  let links = state.resources.filter(r => r.categoryId === "resource-rails");
+
+  if (mode === "tonight"){
+    const allow = new Set(["crisis","shelter","food","urgent","transport","medical","tonight","safety"]);
+    links = links.filter(r => (r.tags || []).some(t => allow.has(String(t).toLowerCase())));
+  } else if (mode === "safety"){
+    const allow = new Set(["safety","crisis","domestic","dv","medical","mental","legal","youth"]);
+    links = links.filter(r => (r.tags || []).some(t => allow.has(String(t).toLowerCase())));
+  }
+
+  const title = mode === "tonight"
+    ? "Tonight (fast): trusted directories"
+    : mode === "safety"
+      ? "Safety-first: trusted directories"
+      : "Trusted resource directories (start here)";
+
+  const subtitle = mode === "tonight"
+    ? "Urgent help for tonight"
+    : mode === "safety"
+      ? "Safer pathways and crisis resources"
+      : "These are external services";
+
   app.innerHTML = `
-    ${card("Trusted resource directories (start here)", "These are external services", `
+    ${card(title, subtitle, `
       <div class="small">
         We link to trusted resource directories. We do not control these services.
         Always confirm hours, eligibility, and availability.
@@ -199,6 +240,10 @@ function renderResources(app){
       <div class="list">
         ${links.map(r => resourceCard(r)).join("")}
       </div>
+      ${mode ? `
+        <hr />
+        <a class="btn btn--ghost" href="#/resources">Clear filter</a>
+      ` : ``}
     `)}
   `;
 }
@@ -358,7 +403,3 @@ function renderNotFound(app){
   window.addEventListener("hashchange", route);
   route();
 })();
-
-
-
-
