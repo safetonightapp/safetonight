@@ -172,7 +172,7 @@ function renderCategory(app, categoryId){
       </div>
       <hr />
       <div class="small">
-        Missing something? Add a “Submit an update” form link later (low-cost, low risk).
+        Missing something? Add a "Submit an update" form link later (low-cost, low risk).
       </div>
     `)}
   `;
@@ -336,7 +336,7 @@ function renderOffline(app){
     ${card("Offline handbook", "Low-data options", `
       <div class="small">
         This site caches core pages for offline use after you open them once.
-        For a printable/offline packet, create a “Print” section later (clean pages with guides + resource rails).
+        For a printable/offline packet, create a "Print" section later (clean pages with guides + resource rails).
       </div>
       <hr />
       <div class="grid">
@@ -347,7 +347,7 @@ function renderOffline(app){
       </div>
       <hr />
       <div class="small">
-        Tip: For offline use, open the pages you need while connected. They’ll be available even if your signal drops.
+        Tip: For offline use, open the pages you need while connected. They'll be available even if your signal drops.
       </div>
     `)}
   `;
@@ -383,7 +383,7 @@ function renderDisclaimer(app){
       <hr />
       <div class="small">
         <strong>Accuracy:</strong> Resource links can change. Always confirm hours, eligibility, and availability with the provider.
-        Listings show “source” and “last checked” where available.
+        Listings show "source" and "last checked" where available.
       </div>
     `)}
   `;
@@ -391,7 +391,7 @@ function renderDisclaimer(app){
 
 function renderNotFound(app){
   app.innerHTML = card("Not found", "", `
-    <div class="small">That page doesn’t exist. Go back to <a href="#/">Home</a>.</div>
+    <div class="small">That page doesn't exist. Go back to <a href="#/">Home</a>.</div>
   `);
 }
 
