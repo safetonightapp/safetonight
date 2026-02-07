@@ -3,12 +3,12 @@
     "id": "tonight-plan",
     "title": "Tonight Plan (Step-by-step)",
     "topic": "Immediate Safety",
-    "readTime": "6–8 min",
+    "readTime": "6-8 min",
     "level": "Simple",
     "summary": "A fast checklist for safer sleep, shelter search, and keeping your phone working.",
     "goal": "Make a safer plan for the next 12 hours.",
-    "timeNeeded": "15–45 minutes",
-    "materialsCost": "Free–$10 (optional: water, snack, charger)",
+    "timeNeeded": "15-45 minutes",
+    "materialsCost": "Free-$10 (optional: water, snack, charger)",
     "steps": [
       "If you are in immediate danger, call 911. If you are in crisis, call/text 988.",
       "If you have a phone, plug in now or use a public charging spot (library, large stores).",
@@ -21,10 +21,10 @@
     "safety": [
       "Avoid isolated areas. Avoid meeting strangers in private places.",
       "Do not accept rides unless you trust the person and feel safe.",
-      "Trust your instincts—if something feels wrong, leave."
+      "Trust your instincts - if something feels wrong, leave."
     ],
     "ifStuck": [
-      "Use 211 first; ask for ‘shelter tonight’ and ‘meal site tomorrow.’",
+      "Use 211 first; ask for 'shelter tonight' and 'meal site tomorrow.'",
       "Go to a public library and ask for local resource help (public info).",
       "If you feel unsafe or threatened, call 911."
     ]
@@ -33,15 +33,15 @@
     "id": "food-today",
     "title": "Food Today (No-cook plan)",
     "topic": "Food",
-    "readTime": "5–7 min",
+    "readTime": "5-7 min",
     "level": "Simple",
     "summary": "How to find meals today and assemble safe no-cook food for 24 hours.",
-    "goal": "Get food today and reduce tomorrow’s stress.",
-    "timeNeeded": "20–60 minutes",
-    "materialsCost": "Free–$15",
+    "goal": "Get food today and reduce tomorrow's stress.",
+    "timeNeeded": "20-60 minutes",
+    "materialsCost": "Free-$15",
     "steps": [
-      "Search for ‘meal sites’ and ‘food pantry’ using 211 or findhelp with your ZIP.",
-      "Ask specifically: ‘What can I get today without an ID?’",
+      "Search for 'meal sites' and 'food pantry' using 211 or findhelp with your ZIP.",
+      "Ask specifically: 'What can I get today without an ID?'",
       "Choose stable foods: peanut butter, tuna packets, crackers, fruit, shelf-stable milk, water.",
       "If you have a cooler or insulated bag, use it for anything perishable.",
       "Plan tomorrow morning: identify one pantry/meal time and one backup option."
@@ -51,7 +51,7 @@
       "Be cautious with food offered by strangers; prioritize known programs."
     ],
     "ifStuck": [
-      "Go to a library/community center and search ‘food pantry near me’ or use 211.",
+      "Go to a library/community center and search 'food pantry near me' or use 211.",
       "Ask shelters or outreach teams about meal schedules."
     ]
   },
@@ -59,17 +59,17 @@
     "id": "hygiene-laundry",
     "title": "Hygiene & Laundry (Low-cost routine)",
     "topic": "Hygiene",
-    "readTime": "6–8 min",
+    "readTime": "6-8 min",
     "level": "Simple",
     "summary": "A practical routine using public facilities and low-cost supplies.",
     "goal": "Reduce health risk and improve stability.",
-    "timeNeeded": "30–90 minutes weekly",
-    "materialsCost": "$0–$12",
+    "timeNeeded": "30-90 minutes weekly",
+    "materialsCost": "$0-$12",
     "steps": [
       "Locate a public restroom + handwashing spot you can access daily (library/community center).",
       "Keep a small kit: wipes, toothbrush, toothpaste, soap, small towel, deodorant.",
       "Pick one laundry day per week; wash socks/underwear first if you have limited loads.",
-      "If you can’t do laundry: rinse and dry socks/underwear; prioritize dryness to prevent skin issues."
+      "If you can't do laundry: rinse and dry socks/underwear; prioritize dryness to prevent skin issues."
     ],
     "safety": [
       "Use public locations. Avoid isolated areas at night.",
@@ -84,16 +84,16 @@
     "id": "id-docs",
     "title": "Replace ID & Documents (Starter steps)",
     "topic": "Documents",
-    "readTime": "7–9 min",
+    "readTime": "7-9 min",
     "level": "Moderate",
     "summary": "A simple sequence: what to gather, who to contact, and how to track.",
     "goal": "Start the process to replace key documents.",
-    "timeNeeded": "30–120 minutes to start",
+    "timeNeeded": "30-120 minutes to start",
     "materialsCost": "Varies (fees may apply)",
     "steps": [
       "Write down what you need: state ID/driver license, birth certificate, Social Security card.",
       "Gather any proof you have: old ID photo, mail, hospital record, school record, court document.",
-      "Use 211/findhelp to locate local ‘ID assistance’ or ‘homeless services’ that help with paperwork.",
+      "Use 211/findhelp to locate local 'ID assistance' or 'homeless services' that help with paperwork.",
       "Make a simple folder (paper or phone notes): dates, names, phone numbers, reference numbers."
     ],
     "safety": [
@@ -109,21 +109,21 @@
     "id": "phone-internet",
     "title": "Phone & Internet Access (Keep it working)",
     "topic": "Connectivity",
-    "readTime": "5–7 min",
+    "readTime": "5-7 min",
     "level": "Simple",
     "summary": "How to keep phone access stable using Wi-Fi, charging, and official low-cost programs.",
     "goal": "Maintain communication for services and jobs.",
-    "timeNeeded": "15–30 minutes",
-    "materialsCost": "$0–$15",
+    "timeNeeded": "15-30 minutes",
+    "materialsCost": "$0-$15",
     "steps": [
       "Find your safe charging spots (library, large stores, day centers).",
       "Use Wi-Fi at libraries/community centers for job apps and service searches.",
-      "Avoid sharing passwords or letting strangers ‘fix’ your phone.",
+      "Avoid sharing passwords or letting strangers 'fix' your phone.",
       "Save key numbers in notes: 211, 988, and a trusted contact."
     ],
     "safety": [
       "Do not hand your unlocked phone to strangers.",
-      "Avoid suspicious ‘free phone’ offers that request personal data."
+      "Avoid suspicious 'free phone' offers that request personal data."
     ],
     "ifStuck": [
       "Ask library staff about Wi-Fi access and printing resources.",
@@ -134,18 +134,18 @@
     "id": "resume-quickstart",
     "title": "Resume Quickstart + Interview Basics",
     "topic": "Work",
-    "readTime": "8–10 min",
+    "readTime": "8-10 min",
     "level": "Moderate",
     "summary": "A simple resume format and interview practice steps even if your history is messy.",
     "goal": "Create a usable resume in one sitting.",
-    "timeNeeded": "45–90 minutes",
+    "timeNeeded": "45-90 minutes",
     "materialsCost": "Free",
     "steps": [
       "Write your name + phone + email at top (create a stable email if needed).",
       "List 3 strengths and 5 tasks you can do reliably (cleaning, lifting, customer service, driving, etc.).",
-      "Add work history if you have it; if not, list ‘Experience’ as tasks and responsibilities.",
-      "Create 1 short explanation for gaps: ‘I had family/health challenges; I’m stable now and ready to work.’",
-      "Practice 3 answers: ‘Tell me about yourself’, ‘Why this job’, ‘Can you work reliably?’"
+      "Add work history if you have it; if not, list 'Experience' as tasks and responsibilities.",
+      "Create 1 short explanation for gaps: 'I had family/health challenges; I'm stable now and ready to work.'",
+      "Practice 3 answers: 'Tell me about yourself', 'Why this job', 'Can you work reliably?'"
     ],
     "safety": [
       "Avoid sharing SSN until a legitimate hiring process requires it.",
@@ -160,23 +160,23 @@
     "id": "microgreens-starter",
     "title": "Microgreens Starter (Low-cost, safe)",
     "topic": "Grow Food",
-    "readTime": "8–10 min",
+    "readTime": "8-10 min",
     "level": "Moderate",
     "summary": "A simple microgreens method using cheap supplies and basic food safety.",
-    "goal": "Grow edible greens in 7–14 days.",
+    "goal": "Grow edible greens in 7-14 days.",
     "timeNeeded": "20 minutes setup + daily check",
-    "materialsCost": "$10–$35",
+    "materialsCost": "$10-$35",
     "steps": [
       "Buy seeds meant for microgreens (avoid unknown treated seeds).",
       "Use a shallow tray + paper towels or safe growing medium.",
-      "Wet the surface, spread seeds, cover lightly for 2–3 days, then uncover for light.",
+      "Wet the surface, spread seeds, cover lightly for 2-3 days, then uncover for light.",
       "Mist daily; avoid standing water to reduce mold.",
       "Harvest with clean scissors; rinse and refrigerate if possible."
     ],
     "safety": [
       "Wash hands and tools before harvesting.",
-      "If you see mold or smell ‘off’, discard the batch.",
-      "This is educational—follow food safety guidance."
+      "If you see mold or smell 'off', discard the batch.",
+      "This is educational - follow food safety guidance."
     ],
     "ifStuck": [
       "Start smaller with one tray.",
@@ -187,15 +187,15 @@
     "id": "safe-income-ideas",
     "title": "Safe Small-Income Ideas (Legal, low barrier)",
     "topic": "Income",
-    "readTime": "6–8 min",
+    "readTime": "6-8 min",
     "level": "Simple",
     "summary": "Low-cost ways to earn without high risk or scams.",
     "goal": "Choose one income idea and do one action today.",
-    "timeNeeded": "30–90 minutes",
-    "materialsCost": "$0–$25",
+    "timeNeeded": "30-90 minutes",
+    "materialsCost": "$0-$25",
     "steps": [
       "Pick ONE: yard cleanup, car wash (by hand), moving help, cleaning, errands, basic painting prep.",
-      "Create a simple offer sentence: ‘I can help with ___ for $___. Available today.’",
+      "Create a simple offer sentence: 'I can help with ___ for $___. Available today.'",
       "Start in safe public channels: community boards, trusted organizations, day-labor centers.",
       "Track payments and hours in phone notes."
     ],
@@ -213,12 +213,12 @@
     "id": "basic-first-aid",
     "title": "Basic First Aid (Educational) + When to seek care",
     "topic": "Health",
-    "readTime": "7–9 min",
+    "readTime": "7-9 min",
     "level": "Simple",
     "summary": "Educational basics and clear guidance on when to get medical help.",
     "goal": "Reduce infection risk and know when to escalate care.",
-    "timeNeeded": "10–20 minutes",
-    "materialsCost": "$0–$15",
+    "timeNeeded": "10-20 minutes",
+    "materialsCost": "$0-$15",
     "steps": [
       "Clean small cuts with clean water; cover with a clean bandage if available.",
       "Keep wounds dry and watch for infection signs: redness spreading, pus, fever, severe pain.",
@@ -238,17 +238,17 @@
     "id": "personal-safety",
     "title": "Personal Safety + Avoiding Scams",
     "topic": "Safety",
-    "readTime": "6–8 min",
+    "readTime": "6-8 min",
     "level": "Simple",
     "summary": "Boundaries, safer choices, and common scam patterns.",
     "goal": "Reduce risk and keep control of your decisions.",
-    "timeNeeded": "10–15 minutes",
+    "timeNeeded": "10-15 minutes",
     "materialsCost": "Free",
     "steps": [
       "Keep your phone and documents on your body when possible.",
       "Meet help in public spaces (library, community center). Avoid private meetups.",
       "Do not share SSN, bank info, PINs, or login codes.",
-      "Watch for scams: ‘pay a fee to get housing’, ‘I can get you benefits faster’, ‘give me your phone.’",
+      "Watch for scams: 'pay a fee to get housing', 'I can get you benefits faster', 'give me your phone.'",
       "If someone pressures you, leave. Trust your instincts."
     ],
     "safety": [
