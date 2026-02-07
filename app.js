@@ -159,23 +159,46 @@ function renderCategory(app, categoryId){
   const cat = state.categories.find(c => c.id === categoryId);
   if (!cat) return renderNotFound(app);
 
+  // Resources for this category
   const items = state.resources.filter(r => r.categoryId === categoryId);
+  const resourcesHtml = `<div class="list">${items.map(r => resourceCard(r)).join("")}</div>`;
 
-  app.innerHTML = `
-    ${card(cat.title, cat.summary, `
-      <div class="small">
-        ${esc(cat.note)}
-      </div>
+  // Guides for this category (using categoryId field on guides)
+  const guides = state.guides.filter(g => g.categoryId === categoryId);
+  let guidesHtml = "";
+  if (guides.length > 0) {
+    guidesHtml = `
       <hr />
+      <div class="h2">Guides</div>
       <div class="list">
-        ${items.map(r => resourceCard(r)).join("")}
+        ${guides.map(g => `
+          <div class="item">
+            <div class="item__title">${esc(g.title)}</div>
+            <div class="item__meta">${esc(g.readTime)} • ${esc(g.level)}</div>
+            <div class="small">${esc(g.summary)}</div>
+            <div class="item__actions">
+              <a class="btn btn--primary" href="#/guide/${esc(g.id)}">Open guide</a>
+            </div>
+          </div>
+        `).join("")}
       </div>
-      <hr />
-      <div class="small">
-        Missing something? Add a "Submit an update" form link later (low-cost, low risk).
-      </div>
-    `)}
+    `;
+  }
+
+  const body = `
+    <div class="small">
+      ${esc(cat.note)}
+    </div>
+    <hr />
+    ${resourcesHtml}
+    ${guidesHtml}
+    <hr />
+    <div class="small">
+      Missing something? Add a "Submit an update" form link later (low-cost, low risk).
+    </div>
   `;
+
+  app.innerHTML = card(cat.title, cat.summary, body);
 }
 
 function resourceCard(r){
@@ -185,11 +208,20 @@ function resourceCard(r){
   const expect = r.whatToExpect ? `<div class="small"><strong>What to expect:</strong> ${esc(r.whatToExpect)}</div>` : "";
   const bring = r.whatToBring ? `<div class="small"><strong>What to bring:</strong> ${esc(r.whatToBring)}</div>` : "";
 
-  const actions = [
-    r.phone ? `<a class="btn" href="tel:${esc(r.phone)}">Call</a>` : "",
-    r.website ? `<a class="btn btn--primary" target="_blank" rel="noopener" href="${esc(r.website)}">Open site</a>` : "",
-    r.directions ? `<a class="btn" target="_blank" rel="noopener" href="${esc(r.directions)}">Directions</a>` : "",
-  ].filter(Boolean).join("");
+  // Build action buttons. If the website is an internal hash link (e.g., "#/guide/..."), open in the same tab.
+  const phoneAction = r.phone ? `<a class="btn" href="tel:${esc(r.phone)}">Call</a>` : "";
+  let websiteAction = "";
+  if (r.website) {
+    const url = String(r.website);
+    if (url.startsWith("#/")) {
+      // internal link to a guide or page within the app
+      websiteAction = `<a class="btn btn--primary" href="${esc(url)}">Open guide</a>`;
+    } else {
+      websiteAction = `<a class="btn btn--primary" target="_blank" rel="noopener" href="${esc(url)}">Open site</a>`;
+    }
+  }
+  const directionsAction = r.directions ? `<a class="btn" target="_blank" rel="noopener" href="${esc(r.directions)}">Directions</a>` : "";
+  const actions = [phoneAction, websiteAction, directionsAction].filter(Boolean).join("");
 
   return `
     <div class="item">
