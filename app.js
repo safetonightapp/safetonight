@@ -23,7 +23,8 @@ async function loadData(){
 function setBuildInfo(){
   const el = $("#buildInfo");
   if (!el) return;
-  el.textContent = `Build: ${new Date().toISOString().slice(0,10)}`;
+  const today = new Date().toISOString().slice(0,10);
+  el.textContent = `Last updated: ${today}`;
 }
 
 function getModeFromHash(){
@@ -100,8 +101,8 @@ function renderHome(app){
       <hr />
 
       <div class="small">
-        This site links to trusted resource directories (like 211 and findhelp) and provides basic how-to guides.
-        Always confirm details with providers.
+        Safety note: If you are in immediate danger, call <a href="tel:911">911</a>.
+        Availability and eligibility vary by location and program. When possible, start with <strong>211</strong> to find local providers.
       </div>
     `)}
 
@@ -159,46 +160,22 @@ function renderCategory(app, categoryId){
   const cat = state.categories.find(c => c.id === categoryId);
   if (!cat) return renderNotFound(app);
 
-  // Resources for this category
   const items = state.resources.filter(r => r.categoryId === categoryId);
-  const resourcesHtml = `<div class="list">${items.map(r => resourceCard(r)).join("")}</div>`;
 
-  // Guides for this category (using categoryId field on guides)
-  const guides = state.guides.filter(g => g.categoryId === categoryId);
-  let guidesHtml = "";
-  if (guides.length > 0) {
-    guidesHtml = `
+  app.innerHTML = `
+    ${card(cat.title, cat.summary, `
+      <div class="small">${esc(cat.note || "")}</div>
       <hr />
-      <div class="h2">Guides</div>
       <div class="list">
-        ${guides.map(g => `
-          <div class="item">
-            <div class="item__title">${esc(g.title)}</div>
-            <div class="item__meta">${esc(g.readTime)} • ${esc(g.level)}</div>
-            <div class="small">${esc(g.summary)}</div>
-            <div class="item__actions">
-              <a class="btn btn--primary" href="#/guide/${esc(g.id)}">Open guide</a>
-            </div>
-          </div>
-        `).join("")}
+        ${items.map(r => resourceCard(r)).join("")}
       </div>
-    `;
-  }
-
-  const body = `
-    <div class="small">
-      ${esc(cat.note)}
-    </div>
-    <hr />
-    ${resourcesHtml}
-    ${guidesHtml}
-    <hr />
-    <div class="small">
-      Missing something? Add a "Submit an update" form link later (low-cost, low risk).
-    </div>
+      <hr />
+      <div class="small">
+        Safety note: If you are in immediate danger, call <a href="tel:911">911</a>.
+        Availability and eligibility vary. Start with <strong>211</strong> when possible.
+      </div>
+    `)}
   `;
-
-  app.innerHTML = card(cat.title, cat.summary, body);
 }
 
 function resourceCard(r){
@@ -208,26 +185,17 @@ function resourceCard(r){
   const expect = r.whatToExpect ? `<div class="small"><strong>What to expect:</strong> ${esc(r.whatToExpect)}</div>` : "";
   const bring = r.whatToBring ? `<div class="small"><strong>What to bring:</strong> ${esc(r.whatToBring)}</div>` : "";
 
-  // Build action buttons. If the website is an internal hash link (e.g., "#/guide/..."), open in the same tab.
-  const phoneAction = r.phone ? `<a class="btn" href="tel:${esc(r.phone)}">Call</a>` : "";
-  let websiteAction = "";
-  if (r.website) {
-    const url = String(r.website);
-    if (url.startsWith("#/")) {
-      // internal link to a guide or page within the app
-      websiteAction = `<a class="btn btn--primary" href="${esc(url)}">Open guide</a>`;
-    } else {
-      websiteAction = `<a class="btn btn--primary" target="_blank" rel="noopener" href="${esc(url)}">Open site</a>`;
-    }
-  }
-  const directionsAction = r.directions ? `<a class="btn" target="_blank" rel="noopener" href="${esc(r.directions)}">Directions</a>` : "";
-  const actions = [phoneAction, websiteAction, directionsAction].filter(Boolean).join("");
+  const actions = [
+    r.phone ? `<a class="btn" href="tel:${esc(r.phone)}">Call</a>` : "",
+    r.website ? `<a class="btn btn--primary" target="_blank" rel="noopener" href="${esc(r.website)}">Open site</a>` : "",
+    r.directions ? `<a class="btn" target="_blank" rel="noopener" href="${esc(r.directions)}">Directions</a>` : "",
+  ].filter(Boolean).join("");
 
   return `
     <div class="item">
       <div class="item__title">${esc(r.title)}</div>
-      <div class="item__meta">${esc(r.area)} • ${esc(r.whoFor || "General")}</div>
-      <div class="small">${esc(r.provides)}</div>
+      <div class="item__meta">${esc(r.area || "National")} • ${esc(r.whoFor || "General")}</div>
+      <div class="small">${esc(r.provides || "")}</div>
       ${expect}
       ${bring}
       <div class="pills">${tagHtml}</div>
@@ -239,14 +207,13 @@ function resourceCard(r){
 
 function renderResources(app){
   const mode = getModeFromHash();
-
   let links = state.resources.filter(r => r.categoryId === "resource-rails");
 
   if (mode === "tonight"){
     const allow = new Set(["crisis","shelter","food","urgent","transport","medical","tonight","safety"]);
     links = links.filter(r => (r.tags || []).some(t => allow.has(String(t).toLowerCase())));
   } else if (mode === "safety"){
-    const allow = new Set(["safety","crisis","domestic","dv","medical","mental","legal","youth"]);
+    const allow = new Set(["safety","crisis","domestic","dv","medical","mental","legal","youth","lgbtq"]);
     links = links.filter(r => (r.tags || []).some(t => allow.has(String(t).toLowerCase())));
   }
 
@@ -265,8 +232,8 @@ function renderResources(app){
   app.innerHTML = `
     ${card(title, subtitle, `
       <div class="small">
-        We link to trusted resource directories. We do not control these services.
-        Always confirm hours, eligibility, and availability.
+        Safety note: If you are in immediate danger, call <a href="tel:911">911</a>.
+        Availability and eligibility vary. When possible, start with <strong>211</strong> to find local providers.
       </div>
       <hr />
       <div class="list">
@@ -333,8 +300,8 @@ function renderGuide(app, guideId){
       <hr />
 
       <div class="small">
-        Educational only. Confirm local rules and service availability.
-        For immediate danger call <a href="tel:911">911</a>. In crisis call/text <a href="tel:988">988</a>.
+        Safety note: If you are in immediate danger, call <a href="tel:911">911</a>.
+        In crisis, call/text <a href="tel:988">988</a>. Availability and eligibility vary by location and program.
       </div>
     `)}
   `;
@@ -346,7 +313,8 @@ function renderCrisis(app){
       <div class="grid">
         <a class="btn btn--danger" href="tel:911">Call 911 (Emergency)</a>
         <a class="btn btn--danger" href="tel:988">Call/Text 988 (Crisis)</a>
-        <a class="btn btn--primary" href="#/guide/personal-safety">Personal safety guide</a>
+        <a class="btn btn--primary" href="#/category/domestic-violence">Domestic violence help</a>
+        <a class="btn btn--primary" href="#/category/youth-runaway">Youth & runaway help</a>
         <a class="btn" href="#/disclaimer">Read disclaimers</a>
       </div>
 
@@ -368,7 +336,6 @@ function renderOffline(app){
     ${card("Offline handbook", "Low-data options", `
       <div class="small">
         This site caches core pages for offline use after you open them once.
-        For a printable/offline packet, create a "Print" section later (clean pages with guides + resource rails).
       </div>
       <hr />
       <div class="grid">
@@ -379,7 +346,7 @@ function renderOffline(app){
       </div>
       <hr />
       <div class="small">
-        Tip: For offline use, open the pages you need while connected. They'll be available even if your signal drops.
+        Tip: For offline use, open the pages you need while connected. They’ll be available even if your signal drops.
       </div>
     `)}
   `;
@@ -409,13 +376,7 @@ function renderDisclaimer(app){
       </div>
       <hr />
       <div class="small">
-        <strong>Build/off-grid content:</strong> Any construction, electrical, or off-grid guidance is provided for general education.
-        Local laws and safety requirements vary. Use qualified professionals when needed.
-      </div>
-      <hr />
-      <div class="small">
         <strong>Accuracy:</strong> Resource links can change. Always confirm hours, eligibility, and availability with the provider.
-        Listings show "source" and "last checked" where available.
       </div>
     `)}
   `;
@@ -423,7 +384,7 @@ function renderDisclaimer(app){
 
 function renderNotFound(app){
   app.innerHTML = card("Not found", "", `
-    <div class="small">That page doesn't exist. Go back to <a href="#/">Home</a>.</div>
+    <div class="small">That page doesn’t exist. Go back to <a href="#/">Home</a>.</div>
   `);
 }
 
@@ -435,3 +396,4 @@ function renderNotFound(app){
   window.addEventListener("hashchange", route);
   route();
 })();
+
