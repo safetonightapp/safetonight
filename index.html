@@ -66,7 +66,9 @@
   <div class="wrap">
     <header>
       <h1>National Resource Guide (US)</h1>
-      <div class="sub">Search this page. Type a need like: shelter, food, SNAP, job training, ID, legal, veterans, mental health, domestic violence, 211, microgreens, hydroponics.</div>
+      <div class="sub">
+        Search this page. Type a need like: shelter, food, SNAP, job training, ID, legal, veterans, mental health, 211, microgreens, hydroponics, fishing, AI.
+      </div>
 
       <div class="toolbar" role="search">
         <div class="search" aria-label="Search resources">
@@ -92,6 +94,9 @@
         <button class="tag" data-fill="microgreens">Microgreens</button>
         <button class="tag" data-fill="hydroponics">Hydroponics</button>
         <button class="tag" data-fill="community garden">Community garden</button>
+        <button class="tag" data-fill="fishing">Fishing</button>
+        <button class="tag" data-fill="AI">AI</button>
+        <button class="tag" data-fill="SBA">SBA</button>
       </div>
     </header>
 
@@ -103,6 +108,11 @@
           <li data-item data-keywords="211 helpline local services shelter food rent utilities mental health domestic violence">
             <a class="item-title" href="https://www.211.org/" target="_blank" rel="noopener">211</a>
             <span class="desc">Find local help for shelter, food, rent, utilities, health care, and more. Dial 211 in many areas.</span>
+          </li>
+
+          <li data-item data-keywords="USICH how to get help homelessness continuum of care">
+            <a class="item-title" href="https://www.usich.gov/how-to-get-help" target="_blank" rel="noopener">USICH: How to Get Help</a>
+            <span class="desc">Federal guidance on how to find local help (211 and local Continuum of Care).</span>
           </li>
 
           <li data-item data-keywords="usa.gov emergency housing shelter find help">
@@ -140,9 +150,14 @@
             <span class="desc">Voucher program for people experiencing homelessness or at risk (access is typically through local partners).</span>
           </li>
 
-          <li data-item data-keywords="USICH interagency council homelessness resources">
+          <li data-item data-keywords="USICH interagency council homelessness federal coordination">
             <a class="item-title" href="https://www.usich.gov/" target="_blank" rel="noopener">USICH (US Interagency Council on Homelessness)</a>
-            <span class="desc">Federal coordination and high-level resources on homelessness response systems.</span>
+            <span class="desc">Federal agency that coordinates the federal response to homelessness and publishes guidance and resources.</span>
+          </li>
+
+          <li data-item data-keywords="USICH federal guidance resources homelessness prevention">
+            <a class="item-title" href="https://www.usich.gov/guidance-reports-data/federal-guidance" target="_blank" rel="noopener">USICH: Federal guidance and resources</a>
+            <span class="desc">Case studies, fact sheets, and webinar recordings for communities and providers.</span>
           </li>
         </ul>
       </section>
@@ -218,7 +233,7 @@
 
           <li data-item data-keywords="job corps free training youth 16 24 housing">
             <a class="item-title" href="https://www.jobcorps.gov/" target="_blank" rel="noopener">Job Corps</a>
-            <span class="desc">No-cost education and job training for eligible ages 16-24 (often includes housing).</span>
+            <span class="desc">No-cost education and job training for eligible ages 16 to 24 (often includes housing).</span>
           </li>
 
           <li data-item data-keywords="goodwill job training local">
@@ -228,7 +243,7 @@
 
           <li data-item data-keywords="coursera financial aid free certificates online">
             <a class="item-title" href="https://www.coursera.org/" target="_blank" rel="noopener">Coursera</a>
-            <span class="desc">Online courses; some options may be low-cost or available via financial aid (check inside each course).</span>
+            <span class="desc">Online courses; some may be low-cost or available via financial aid (check each course).</span>
           </li>
 
           <li data-item data-keywords="edx free courses certificates">
@@ -244,62 +259,126 @@
       </section>
 
       <section data-section>
-        <h2>Self sufficient living and growing food</h2>
+        <h2>Self sufficient living and simple independence ideas</h2>
         <ul>
-          <li data-item data-keywords="community garden grow food local garden urban farming">
-            <a class="item-title" href="https://communitygarden.org/find-a-garden/" target="_blank" rel="noopener">
-              American Community Gardening Association
-            </a>
-            <span class="desc">Find or start a community garden. Helps people grow food locally with shared space.</span>
+          <li data-item data-keywords="community garden find a garden ACGA communitygarden.org">
+            <a class="item-title" href="https://www.communitygarden.org/garden" target="_blank" rel="noopener">Find a community garden (ACGA map)</a>
+            <span class="desc">Use the map to find a community garden near you, or to learn how gardens are organized.</span>
           </li>
 
-          <li data-item data-keywords="community garden USDA urban agriculture">
-            <a class="item-title" href="https://www.usda.gov/urban" target="_blank" rel="noopener">
-              USDA Urban Agriculture Programs
-            </a>
+          <li data-item data-keywords="community garden education resources ACGA">
+            <a class="item-title" href="https://www.communitygarden.org/resources" target="_blank" rel="noopener">Community garden resources (ACGA)</a>
+            <span class="desc">Guides and links for starting and managing a community garden.</span>
+          </li>
+
+          <li data-item data-keywords="USDA urban agriculture programs">
+            <a class="item-title" href="https://www.usda.gov/urban" target="_blank" rel="noopener">USDA Urban Agriculture Programs</a>
             <span class="desc">Federal support and education for growing food in cities and small spaces.</span>
           </li>
 
-          <li data-item data-keywords="microgreens grow microgreens hydroponics indoor food">
-            <a class="item-title" href="https://extension.psu.edu/microgreens" target="_blank" rel="noopener">
-              Penn State Extension: Microgreens Guide
-            </a>
-            <span class="desc">Step by step guide to growing microgreens indoors with minimal cost.</span>
+          <li data-item data-keywords="microgreens grow microgreens indoor food">
+            <a class="item-title" href="https://extension.psu.edu/microgreens" target="_blank" rel="noopener">Penn State Extension: Microgreens guide</a>
+            <span class="desc">Microgreens basics and how to grow them with minimal equipment.</span>
           </li>
 
-          <li data-item data-keywords="hydroponics beginner guide indoor gardening">
-            <a class="item-title" href="https://extension.umn.edu/planting-and-growing-guides/hydroponics" target="_blank" rel="noopener">
-              University of Minnesota: Hydroponics Basics
-            </a>
-            <span class="desc">Beginner guide to growing food in water without soil.</span>
+          <li data-item data-keywords="hydroponics beginner guide small scale hydroponics">
+            <a class="item-title" href="https://extension.umn.edu/how/small-scale-hydroponics" target="_blank" rel="noopener">University of Minnesota Extension: Small-scale hydroponics</a>
+            <span class="desc">Beginner guide for growing plants without soil using water, nutrients, and light.</span>
           </li>
 
-          <li data-item data-keywords="container gardening grow food small space balcony">
-            <a class="item-title" href="https://hgic.clemson.edu/factsheet/container-gardening/" target="_blank" rel="noopener">
-              Clemson Extension: Container Gardening
-            </a>
-            <span class="desc">Growing vegetables in buckets, pots, or small spaces.</span>
+          <li data-item data-keywords="container vegetable gardening bucket gardening small space">
+            <a class="item-title" href="https://hgic.clemson.edu/factsheet/container-vegetable-gardening/" target="_blank" rel="noopener">Clemson HGIC: Container vegetable gardening</a>
+            <span class="desc">Grow vegetables in pots or buckets when you do not have good soil or space.</span>
           </li>
 
           <li data-item data-keywords="seed library free seeds gardening">
-            <a class="item-title" href="https://seedlibraries.weebly.com/" target="_blank" rel="noopener">
-              Seed Library Map
-            </a>
-            <span class="desc">Find free seed libraries hosted by public libraries and communities.</span>
+            <a class="item-title" href="https://seedlibraries.weebly.com/" target="_blank" rel="noopener">Seed Library Map</a>
+            <span class="desc">Find seed libraries (often at public libraries) that offer free seeds.</span>
           </li>
 
           <li data-item data-keywords="food preservation canning storing food">
-            <a class="item-title" href="https://nchfp.uga.edu/" target="_blank" rel="noopener">
-              National Center for Home Food Preservation
-            </a>
-            <span class="desc">Safe methods for storing and preserving food.</span>
+            <a class="item-title" href="https://nchfp.uga.edu/" target="_blank" rel="noopener">National Center for Home Food Preservation</a>
+            <span class="desc">Safe ways to store and preserve food.</span>
           </li>
 
-          <li data-item data-keywords="foraging edible plants wild food guide">
-            <a class="item-title" href="https://www.fs.usda.gov/wildflowers/ethnobotany/foraging.shtml" target="_blank" rel="noopener">
-              USDA Forest Service: Foraging safety
-            </a>
-            <span class="desc">Education about safer wild plant foraging practices.</span>
+          <li data-item data-keywords="foraging wild plants ethics forest service">
+            <a class="item-title" href="https://www.fs.usda.gov/wildflowers/ethics/index.shtml" target="_blank" rel="noopener">US Forest Service: Wildflower ethics</a>
+            <span class="desc">General ethics for protecting native plants and habitats.</span>
+          </li>
+
+          <li data-item data-keywords="foraging permits collecting plants forest service permit">
+            <a class="item-title" href="https://www.fs.usda.gov/wildflowers/ethics/permit.shtml" target="_blank" rel="noopener">US Forest Service: Collection permits</a>
+            <span class="desc">When permits may be required to collect plants or plant material on national forests.</span>
+          </li>
+
+          <li data-item data-keywords="farm tools DIY open source agriculture farmhack">
+            <a class="item-title" href="https://farmhack.org/" target="_blank" rel="noopener">FarmHack</a>
+            <span class="desc">Open community for DIY farm tools, repairs, and low-cost inventions for food growing.</span>
+          </li>
+
+          <li data-item data-keywords="open source housing building plans wikihouse">
+            <a class="item-title" href="https://www.wikihouse.cc/" target="_blank" rel="noopener">WikiHouse</a>
+            <span class="desc">Modular building system with open designs and guides for lower-cost building projects.</span>
+          </li>
+
+          <li data-item data-keywords="open source ecology tools machines DIY self reliance">
+            <a class="item-title" href="https://www.opensourceecology.org/" target="_blank" rel="noopener">Open Source Ecology</a>
+            <span class="desc">Open-source blueprints for practical machines and tools to support self-reliance.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>AI learning and help (free access options)</h2>
+        <ul>
+          <li data-item data-keywords="AI learning chatgpt free help writing resume job search">
+            <a class="item-title" href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT (free sign up option)</a>
+            <span class="desc">Ask for help with plans, resumes, forms, step-by-step checklists, and learning topics.</span>
+          </li>
+
+          <li data-item data-keywords="AI grok free help research">
+            <a class="item-title" href="https://x.ai/grok" target="_blank" rel="noopener">Grok (xAI)</a>
+            <span class="desc">AI assistant for questions, planning, and research-style help.</span>
+          </li>
+
+          <li data-item data-keywords="AI gemini google assistant writing planning">
+            <a class="item-title" href="https://gemini.google.com/" target="_blank" rel="noopener">Google Gemini</a>
+            <span class="desc">AI assistant for writing, planning, brainstorming, and learning.</span>
+          </li>
+
+          <li data-item data-keywords="AI copilot microsoft assistant">
+            <a class="item-title" href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Microsoft Copilot</a>
+            <span class="desc">AI assistant for questions, drafting, and learning support.</span>
+          </li>
+
+          <li data-item data-keywords="AI perplexity search answers citations">
+            <a class="item-title" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a>
+            <span class="desc">AI answer engine that can help find sources and summarize information.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Fishing resources (nationwide)</h2>
+        <ul>
+          <li data-item data-keywords="fishing license get a fishing license by state">
+            <a class="item-title" href="https://www.fws.gov/initiative/fishing/purchase-fishing-license" target="_blank" rel="noopener">US Fish and Wildlife Service: Purchase a fishing license</a>
+            <span class="desc">Explains fishing licenses and links to buy licenses (state-based).</span>
+          </li>
+
+          <li data-item data-keywords="fishing license by state takemefishing">
+            <a class="item-title" href="https://www.takemefishing.org/get-your-fishing-license/" target="_blank" rel="noopener">Take Me Fishing: Get your fishing license</a>
+            <span class="desc">State lookup for license basics, where to buy, and rules.</span>
+          </li>
+
+          <li data-item data-keywords="fishing places to fish by state takemefishing">
+            <a class="item-title" href="https://www.takemefishing.org/places-to-boat-and-fish/" target="_blank" rel="noopener">Take Me Fishing: Places to boat and fish</a>
+            <span class="desc">State lookup for fishing locations and regulations.</span>
+          </li>
+
+          <li data-item data-keywords="NOAA permits federal fishing seafood permits">
+            <a class="item-title" href="https://www.fisheries.noaa.gov/permits-and-forms/fishing-seafood" target="_blank" rel="noopener">NOAA Fisheries: Federal fishing permits by region</a>
+            <span class="desc">Federal permit info (mainly for regulated fisheries and reporting by region).</span>
           </li>
         </ul>
       </section>
@@ -359,10 +438,40 @@
         </ul>
       </section>
 
+      <section data-section>
+        <h2>Start a small business (SBA and free help)</h2>
+        <ul>
+          <li data-item data-keywords="SBA learning platform free courses start a business">
+            <a class="item-title" href="https://www.sba.gov/sba-learning-platform" target="_blank" rel="noopener">SBA Learning Platform</a>
+            <span class="desc">Free online courses to start, pivot, or grow a small business.</span>
+          </li>
+
+          <li data-item data-keywords="SBA local assistance find help counselor SBDC SCORE">
+            <a class="item-title" href="https://www.sba.gov/local-assistance/find" target="_blank" rel="noopener">SBA: Find local assistance</a>
+            <span class="desc">Find free counseling and training partners by ZIP code (SBDC, SCORE, and others).</span>
+          </li>
+
+          <li data-item data-keywords="SCORE free business mentor">
+            <a class="item-title" href="https://www.score.org/" target="_blank" rel="noopener">SCORE</a>
+            <span class="desc">Free business mentoring and workshops (partnered with SBA).</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Public lands and outdoor info</h2>
+        <ul>
+          <li data-item data-keywords="US Forest Service fs.usda.gov national forests information">
+            <a class="item-title" href="https://www.fs.usda.gov/" target="_blank" rel="noopener">US Forest Service (home)</a>
+            <span class="desc">Official site for national forests and grasslands, rules, recreation info, and permits.</span>
+          </li>
+        </ul>
+      </section>
+
     </div>
 
     <div class="note">
-      Safety note: If you are in immediate danger, call 911. Availability and eligibility vary by location and program. When possible, start with <strong>211</strong> to find local providers.
+      Safety note: If you are in immediate danger, call 911. Availability and eligibility vary by location and program. When possible, start with 211 to find local providers.
     </div>
   </div>
 
