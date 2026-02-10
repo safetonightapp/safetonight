@@ -530,5 +530,13 @@
       applyFilter('');
     })();
   </script>
-</body>
+<script>
+  // Simple version: reload with cache-busting query param if page feels stale
+  if (!window.location.search.includes('updated=')) {
+    // Add a unique timestamp to force fresh fetch
+    const timestamp = new Date().getTime();
+    window.location.replace(window.location.pathname + '?updated=' + timestamp);
+  }
+</script></body>
 </html>
+
