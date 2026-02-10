@@ -1,62 +1,56 @@
 [
   {
-    "id": "shelter",
-    "title": "Shelter & Safe Sleep",
-    "summary": "Find shelters and safer options for tonight.",
-    "note": "We link out to trusted directories. Always confirm availability and hours."
-  },
-  {
     "id": "food-today",
     "title": "Food Today",
-    "summary": "Meal programs, food banks, and SNAP basics.",
-    "note": "Start with trusted directories; then use guides for low-cost food steps."
+    "summary": "Find food pantries, hot meals, and SNAP help.",
+    "note": "Start with 211 for local food options. Availability can change daily."
   },
   {
-    "id": "hygiene",
-    "title": "Hygiene & Laundry",
-    "summary": "Showers, laundry, restrooms, and basic hygiene steps.",
-    "note": "Public locations (libraries/community centers) are often safer starting points."
+    "id": "shelter",
+    "title": "Shelter & Safe Sleep",
+    "summary": "Shelters, warming centers, and safe-sleep options.",
+    "note": "Call ahead when possible. Ask about ID requirements and intake times."
   },
   {
     "id": "id-docs",
     "title": "ID & Documents",
-    "summary": "Replace ID, birth certificate, and key paperwork.",
-    "note": "Rules vary; confirm with official agencies. Guides focus on steps and what to gather."
-  },
-  {
-    "id": "phone-internet",
-    "title": "Phone & Internet",
-    "summary": "Low-cost phone options, Wi-Fi, and keeping access stable.",
-    "note": "Avoid sharing passwords. Use official program sites where possible."
+    "summary": "Replace ID, birth certificate, social security card, and records.",
+    "note": "Start with 211 and local legal aid. Requirements vary by county."
   },
   {
     "id": "jobs-income",
     "title": "Jobs & Income",
-    "summary": "Resume quickstart, job search, and safe income ideas.",
-    "note": "No illegal ideas. Safety-first and realistic."
+    "summary": "Job centers, resumes, benefits, and income help.",
+    "note": "Use local workforce centers and libraries for computers and printing."
   },
   {
-    "id": "grow-food",
-    "title": "Grow Food (Low-cost)",
-    "summary": "Microgreens and small-scale food growing basics.",
-    "note": "Education only. Follow food safety guidance."
+    "id": "youth-runaway",
+    "title": "Youth & Runaway Resources",
+    "summary": "Crisis help and programs for runaway and homeless youth.",
+    "note": "If you are under 18 or on your own, start with the National Runaway Safeline."
   },
   {
-    "id": "build-library",
-    "title": "Build & Fix Library (Educational)",
-    "summary": "Open guides for basic builds and repairs (safe, legal, non-technical).",
-    "note": "No structural engineering promises. Use qualified help where needed."
+    "id": "lgbtq",
+    "title": "LGBTQ+ Resources",
+    "summary": "Crisis support and housing resources for LGBTQ+ youth.",
+    "note": "If you are in crisis, contact Trevor Project or 988. Safer support options are listed here."
   },
   {
-    "id": "safety",
-    "title": "Safety & Avoiding Scams",
-    "summary": "Personal safety, boundaries, scam avoidance.",
-    "note": "If you are in danger call 911. In crisis call/text 988."
+    "id": "hygiene-clinics",
+    "title": "Hygiene, Clothing & Free Clinics",
+    "summary": "Free/low-cost clinics, hygiene support, and clothing help.",
+    "note": "Many food banks also have hygiene kits. Use 211 to locate local providers."
+  },
+  {
+    "id": "domestic-violence",
+    "title": "Domestic Violence Help",
+    "summary": "Confidential help, safety planning, and shelters.",
+    "note": "If it’s unsafe to browse, stop and call 911 or the DV hotline from a safe phone."
   },
   {
     "id": "resource-rails",
     "title": "Trusted Resource Directories",
-    "summary": "Official or widely used directories (211, findhelp, etc.).",
-    "note": "These are external services; always confirm details."
+    "summary": "Start here to find local help fast.",
+    "note": "These are external services. Always confirm details with the provider."
   }
 ]
