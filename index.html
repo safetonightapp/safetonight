@@ -1,64 +1,422 @@
 <!doctype html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b3b2e" />
-  <title>Safe Tonight - Florida Panhandle</title>
-  <meta name="description" content="A safety-first survival and independence guide linking to trusted resources and practical how-to guides. Educational only." />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>National Resource Guide (US)</title>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#121c2f; --text:#eef3ff; --muted:#b9c3d9; --link:#7cc0ff;
+      --line:#25324d; --accent:#ffd166; --ok:#7CFFB2;
+    }
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.45}
+    .wrap{max-width:980px;margin:0 auto;padding:18px}
+    header{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+    h1{margin:0;font-size:1.4rem}
+    .sub{color:var(--muted);font-size:.95rem}
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .search{
+      flex:1;min-width:220px;display:flex;gap:8px;align-items:center;
+      background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px
+    }
+    .search input{
+      width:100%;border:none;outline:none;background:transparent;color:var(--text);font-size:1rem
+    }
+    .btn{
+      border:1px solid var(--line);background:var(--card);color:var(--text);
+      padding:10px 12px;border-radius:10px;cursor:pointer
+    }
+    .btn:hover{border-color:#3a4a72}
+    .pill{
+      font-size:.85rem;color:var(--muted);border:1px solid var(--line);
+      padding:6px 10px;border-radius:999px;background:rgba(18,28,47,.7)
+    }
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media (min-width: 860px){ .grid{grid-template-columns:1fr 1fr} }
+    section{
+      background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px
+    }
+    h2{margin:0 0 10px 0;font-size:1.1rem}
+    ul{margin:0;padding-left:18px}
+    li{margin:10px 0}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .item-title{font-weight:650}
+    .desc{color:var(--muted);display:block;margin-top:2px}
+    .meta{margin-top:6px;color:var(--muted);font-size:.85rem}
+    .meta code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px}
+    .note{
+      margin-top:14px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:12px
+    }
+    .hidden{display:none !important}
+    .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0
+    }
+    .quick{
+      display:flex;gap:8px;flex-wrap:wrap;margin-top:6px
+    }
+    .tag{
+      font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);cursor:pointer
+    }
+    .tag:hover{border-color:#3a4a72}
+    .found{color:var(--ok)}
+  </style>
 </head>
 <body>
-  <!-- Safety banner (short disclaimer) -->
-  <div class="banner" role="region" aria-label="Safety notice">
-    <div class="banner__inner">
-      <strong>Emergency?</strong> Call <a href="tel:911">911</a>.
-      In crisis? Call/text <a href="tel:988">988</a>.
-      This site is <strong>information + education</strong>, not a service provider.
-      <a href="#/disclaimer">Read disclaimers</a>.
+  <div class="wrap">
+    <header>
+      <h1>National Resource Guide (US)</h1>
+      <div class="sub">Search this page. Type a need like: shelter, food, SNAP, job training, ID, legal, veterans, mental health, domestic violence, 211, microgreens, hydroponics.</div>
+
+      <div class="toolbar" role="search">
+        <div class="search" aria-label="Search resources">
+          <span aria-hidden="true">🔎</span>
+          <label class="sr-only" for="q">Search resources</label>
+          <input id="q" type="search" placeholder="Search resources on this page..." autocomplete="off" />
+        </div>
+        <button class="btn" id="clearBtn" type="button">Clear</button>
+        <span class="pill"><span id="count" class="found">0</span> shown</span>
+      </div>
+
+      <div class="quick" aria-label="Quick filters">
+        <button class="tag" data-fill="housing">Housing</button>
+        <button class="tag" data-fill="shelter">Shelter</button>
+        <button class="tag" data-fill="food">Food</button>
+        <button class="tag" data-fill="SNAP">SNAP</button>
+        <button class="tag" data-fill="jobs">Jobs</button>
+        <button class="tag" data-fill="training">Training</button>
+        <button class="tag" data-fill="ID">ID</button>
+        <button class="tag" data-fill="legal">Legal</button>
+        <button class="tag" data-fill="veterans">Veterans</button>
+        <button class="tag" data-fill="mental health">Mental health</button>
+        <button class="tag" data-fill="microgreens">Microgreens</button>
+        <button class="tag" data-fill="hydroponics">Hydroponics</button>
+        <button class="tag" data-fill="community garden">Community garden</button>
+      </div>
+    </header>
+
+    <div class="grid" id="sections">
+
+      <section data-section>
+        <h2>Get help now</h2>
+        <ul>
+          <li data-item data-keywords="211 helpline local services shelter food rent utilities mental health domestic violence">
+            <a class="item-title" href="https://www.211.org/" target="_blank" rel="noopener">211</a>
+            <span class="desc">Find local help for shelter, food, rent, utilities, health care, and more. Dial 211 in many areas.</span>
+          </li>
+
+          <li data-item data-keywords="usa.gov emergency housing shelter find help">
+            <a class="item-title" href="https://www.usa.gov/emergency-housing" target="_blank" rel="noopener">USA.gov: Emergency housing</a>
+            <span class="desc">Federal starting point for finding emergency housing help.</span>
+          </li>
+
+          <li data-item data-keywords="988 suicide crisis lifeline mental health crisis">
+            <a class="item-title" href="https://988lifeline.org/" target="_blank" rel="noopener">988 Suicide and Crisis Lifeline</a>
+            <span class="desc">Call or text 988 for crisis support (24/7).</span>
+          </li>
+
+          <li data-item data-keywords="domestic violence hotline safety shelter">
+            <a class="item-title" href="https://www.thehotline.org/" target="_blank" rel="noopener">National Domestic Violence Hotline</a>
+            <span class="desc">Support, safety planning, and local referrals (call, chat, text options).</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Housing and homelessness help</h2>
+        <ul>
+          <li data-item data-keywords="HUD Continuum of Care CoC homelessness shelter rapid rehousing supportive housing">
+            <a class="item-title" href="https://www.hud.gov/hud-partners/community-coc" target="_blank" rel="noopener">HUD: Continuum of Care (CoC)</a>
+            <span class="desc">Local systems that connect people to shelter, rapid rehousing, and supportive housing.</span>
+          </li>
+
+          <li data-item data-keywords="HUD find homeless help resources shelter programs">
+            <a class="item-title" href="https://www.hud.gov/findshelter" target="_blank" rel="noopener">HUD: Find Shelter</a>
+            <span class="desc">Search for shelter and services by location.</span>
+          </li>
+
+          <li data-item data-keywords="HUD housing choice voucher emergency housing voucher EHV">
+            <a class="item-title" href="https://www.hud.gov/helping-americans/housing-choice-vouchers-emergency" target="_blank" rel="noopener">HUD: Emergency Housing Vouchers (EHV)</a>
+            <span class="desc">Voucher program for people experiencing homelessness or at risk (access is typically through local partners).</span>
+          </li>
+
+          <li data-item data-keywords="USICH interagency council homelessness resources">
+            <a class="item-title" href="https://www.usich.gov/" target="_blank" rel="noopener">USICH (US Interagency Council on Homelessness)</a>
+            <span class="desc">Federal coordination and high-level resources on homelessness response systems.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Food and basic needs</h2>
+        <ul>
+          <li data-item data-keywords="SNAP food stamps apply benefits USDA">
+            <a class="item-title" href="https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program" target="_blank" rel="noopener">USDA: SNAP</a>
+            <span class="desc">Food benefits (apply through your state).</span>
+            <div class="meta">State offices: <a href="https://www.fns.usda.gov/snap/state-directory" target="_blank" rel="noopener">SNAP state directory</a></div>
+          </li>
+
+          <li data-item data-keywords="WIC women infants children nutrition">
+            <a class="item-title" href="https://www.fns.usda.gov/wic" target="_blank" rel="noopener">USDA: WIC</a>
+            <span class="desc">Nutrition support for pregnant people, infants, and children (apply locally).</span>
+          </li>
+
+          <li data-item data-keywords="Feeding America food bank pantry">
+            <a class="item-title" href="https://www.feedingamerica.org/find-your-local-foodbank" target="_blank" rel="noopener">Feeding America: Find a food bank</a>
+            <span class="desc">Find local food pantries and food banks.</span>
+          </li>
+
+          <li data-item data-keywords="TANF cash assistance families">
+            <a class="item-title" href="https://www.acf.hhs.gov/ofa/programs/tanf" target="_blank" rel="noopener">HHS: TANF</a>
+            <span class="desc">Cash assistance and support services for eligible families (run by states).</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Health, mental health, recovery</h2>
+        <ul>
+          <li data-item data-keywords="Medicaid health insurance apply">
+            <a class="item-title" href="https://www.medicaid.gov/" target="_blank" rel="noopener">Medicaid.gov</a>
+            <span class="desc">Health coverage information and how to apply (state-based).</span>
+          </li>
+
+          <li data-item data-keywords="HealthCare.gov marketplace insurance">
+            <a class="item-title" href="https://www.healthcare.gov/" target="_blank" rel="noopener">HealthCare.gov</a>
+            <span class="desc">Marketplace coverage options and enrollment.</span>
+          </li>
+
+          <li data-item data-keywords="SAMHSA treatment locator mental health substance use">
+            <a class="item-title" href="https://findtreatment.gov/" target="_blank" rel="noopener">FindTreatment.gov</a>
+            <span class="desc">Locator for mental health and substance use treatment.</span>
+          </li>
+
+          <li data-item data-keywords="SAMHSA hotline national helpline substance use mental health">
+            <a class="item-title" href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" rel="noopener">SAMHSA National Helpline</a>
+            <span class="desc">Confidential help and treatment referrals.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Jobs, training, certifications</h2>
+        <ul>
+          <li data-item data-keywords="American Job Center CareerOneStop jobs resume training WIOA">
+            <a class="item-title" href="https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx" target="_blank" rel="noopener">American Job Centers (CareerOneStop)</a>
+            <span class="desc">Job search, resumes, career coaching, and training referrals (including WIOA through local workforce boards).</span>
+          </li>
+
+          <li data-item data-keywords="WIOA workforce innovation opportunity act training grants">
+            <a class="item-title" href="https://www.dol.gov/agencies/eta/wioa" target="_blank" rel="noopener">DOL: WIOA overview</a>
+            <span class="desc">Federal workforce training framework (services delivered locally).</span>
+          </li>
+
+          <li data-item data-keywords="apprenticeship paid apprenticeship training">
+            <a class="item-title" href="https://www.apprenticeship.gov/" target="_blank" rel="noopener">Apprenticeship.gov</a>
+            <span class="desc">Find paid apprenticeships and training programs.</span>
+          </li>
+
+          <li data-item data-keywords="job corps free training youth 16 24 housing">
+            <a class="item-title" href="https://www.jobcorps.gov/" target="_blank" rel="noopener">Job Corps</a>
+            <span class="desc">No-cost education and job training for eligible ages 16-24 (often includes housing).</span>
+          </li>
+
+          <li data-item data-keywords="goodwill job training local">
+            <a class="item-title" href="https://www.goodwill.org/jobs-training/" target="_blank" rel="noopener">Goodwill: Jobs and training</a>
+            <span class="desc">Job help and training programs (availability varies by local Goodwill).</span>
+          </li>
+
+          <li data-item data-keywords="coursera financial aid free certificates online">
+            <a class="item-title" href="https://www.coursera.org/" target="_blank" rel="noopener">Coursera</a>
+            <span class="desc">Online courses; some options may be low-cost or available via financial aid (check inside each course).</span>
+          </li>
+
+          <li data-item data-keywords="edx free courses certificates">
+            <a class="item-title" href="https://www.edx.org/" target="_blank" rel="noopener">edX</a>
+            <span class="desc">Online courses; some are free to audit, certificates often paid.</span>
+          </li>
+
+          <li data-item data-keywords="library free linkedin learning">
+            <a class="item-title" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">LinkedIn Learning</a>
+            <span class="desc">Many public libraries provide free access. Ask your local library.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Self sufficient living and growing food</h2>
+        <ul>
+          <li data-item data-keywords="community garden grow food local garden urban farming">
+            <a class="item-title" href="https://communitygarden.org/find-a-garden/" target="_blank" rel="noopener">
+              American Community Gardening Association
+            </a>
+            <span class="desc">Find or start a community garden. Helps people grow food locally with shared space.</span>
+          </li>
+
+          <li data-item data-keywords="community garden USDA urban agriculture">
+            <a class="item-title" href="https://www.usda.gov/urban" target="_blank" rel="noopener">
+              USDA Urban Agriculture Programs
+            </a>
+            <span class="desc">Federal support and education for growing food in cities and small spaces.</span>
+          </li>
+
+          <li data-item data-keywords="microgreens grow microgreens hydroponics indoor food">
+            <a class="item-title" href="https://extension.psu.edu/microgreens" target="_blank" rel="noopener">
+              Penn State Extension: Microgreens Guide
+            </a>
+            <span class="desc">Step by step guide to growing microgreens indoors with minimal cost.</span>
+          </li>
+
+          <li data-item data-keywords="hydroponics beginner guide indoor gardening">
+            <a class="item-title" href="https://extension.umn.edu/planting-and-growing-guides/hydroponics" target="_blank" rel="noopener">
+              University of Minnesota: Hydroponics Basics
+            </a>
+            <span class="desc">Beginner guide to growing food in water without soil.</span>
+          </li>
+
+          <li data-item data-keywords="container gardening grow food small space balcony">
+            <a class="item-title" href="https://hgic.clemson.edu/factsheet/container-gardening/" target="_blank" rel="noopener">
+              Clemson Extension: Container Gardening
+            </a>
+            <span class="desc">Growing vegetables in buckets, pots, or small spaces.</span>
+          </li>
+
+          <li data-item data-keywords="seed library free seeds gardening">
+            <a class="item-title" href="https://seedlibraries.weebly.com/" target="_blank" rel="noopener">
+              Seed Library Map
+            </a>
+            <span class="desc">Find free seed libraries hosted by public libraries and communities.</span>
+          </li>
+
+          <li data-item data-keywords="food preservation canning storing food">
+            <a class="item-title" href="https://nchfp.uga.edu/" target="_blank" rel="noopener">
+              National Center for Home Food Preservation
+            </a>
+            <span class="desc">Safe methods for storing and preserving food.</span>
+          </li>
+
+          <li data-item data-keywords="foraging edible plants wild food guide">
+            <a class="item-title" href="https://www.fs.usda.gov/wildflowers/ethnobotany/foraging.shtml" target="_blank" rel="noopener">
+              USDA Forest Service: Foraging safety
+            </a>
+            <span class="desc">Education about safer wild plant foraging practices.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Veterans</h2>
+        <ul>
+          <li data-item data-keywords="VA homeless veterans housing services">
+            <a class="item-title" href="https://www.va.gov/homeless/" target="_blank" rel="noopener">VA: Homeless Veterans</a>
+            <span class="desc">Housing, health care, and support services for veterans.</span>
+          </li>
+
+          <li data-item data-keywords="877 4AID VET hotline veterans">
+            <a class="item-title" href="https://www.va.gov/homeless/nationalcallcenter.asp" target="_blank" rel="noopener">VA National Call Center for Homeless Veterans</a>
+            <span class="desc">Call 877-4AID-VET (877-424-3838) for help.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Legal help and documents</h2>
+        <ul>
+          <li data-item data-keywords="legal aid find lawyer free civil legal help">
+            <a class="item-title" href="https://www.lsc.gov/about-lsc/what-legal-aid/get-legal-help" target="_blank" rel="noopener">Legal Services Corporation: Find legal aid</a>
+            <span class="desc">Find free or low-cost civil legal help (housing, benefits, family, more).</span>
+          </li>
+
+          <li data-item data-keywords="replace social security card SSA">
+            <a class="item-title" href="https://www.ssa.gov/number-card/replace-card" target="_blank" rel="noopener">SSA: Replace a Social Security card</a>
+            <span class="desc">How to replace or request a Social Security card.</span>
+          </li>
+
+          <li data-item data-keywords="birth certificate vital records replace">
+            <a class="item-title" href="https://www.cdc.gov/nchs/w2w/index.htm" target="_blank" rel="noopener">CDC: Where to write for vital records</a>
+            <span class="desc">How to request birth certificates and other vital records (state-based).</span>
+          </li>
+
+          <li data-item data-keywords="dmv id state identification">
+            <a class="item-title" href="https://www.usa.gov/state-motor-vehicle-services" target="_blank" rel="noopener">USA.gov: State motor vehicle services</a>
+            <span class="desc">Find your state DMV site for ID or drivers license info.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Libraries, internet, phone access</h2>
+        <ul>
+          <li data-item data-keywords="public library find library internet printing">
+            <a class="item-title" href="https://www.publiclibraries.com/" target="_blank" rel="noopener">Find a public library</a>
+            <span class="desc">Libraries often provide internet, printing, computers, and help with job searches.</span>
+          </li>
+
+          <li data-item data-keywords="lifeline phone free cell service low income">
+            <a class="item-title" href="https://www.lifelinesupport.org/" target="_blank" rel="noopener">Lifeline Support</a>
+            <span class="desc">Discount phone or internet service for eligible households.</span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+    <div class="note">
+      Safety note: If you are in immediate danger, call 911. Availability and eligibility vary by location and program. When possible, start with <strong>211</strong> to find local providers.
     </div>
   </div>
 
-  <header class="header">
-    <div class="header__brand">
-      <div class="logo" aria-hidden="true">ST
-      </div>
-      <div>
-        <div class="brand__name">Safe Tonight</div>
-        <div class="brand__sub">Florida Panhandle (Santa Rosa + Escambia)</div>
-      </div>
-    </div>
-
-    <nav class="header__actions" aria-label="Primary actions">
-      <a class="btn btn--danger" href="#/crisis" aria-label="Crisis and safety">Crisis & Safety</a>
-      <a class="btn btn--ghost" href="#/offline" aria-label="Offline handbook">Offline</a>
-    </nav>
-  </header>
-
-  <main id="app" class="app" role="main" tabindex="-1"></main>
-
-  <footer class="footer">
-    <div class="footer__links">
-      <a href="#/">Home</a>
-      <a href="#/categories">Categories</a>
-      <a href="#/guides">Guides</a>
-      <a href="#/resources">Resource Links</a>
-      <a href="#/disclaimer">Disclaimer</a>
-    </div>
-    <div class="footer__small">
-      Educational and informational use only. No guarantees. Always confirm details with providers. <span id="buildInfo"></span>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js').catch(() => {});
-    }
+    (function(){
+      const q = document.getElementById('q');
+      const clearBtn = document.getElementById('clearBtn');
+      const countEl = document.getElementById('count');
+      const items = Array.from(document.querySelectorAll('[data-item]'));
+      const sections = Array.from(document.querySelectorAll('[data-section]'));
+
+      function normalize(s){
+        return (s || '').toLowerCase().trim();
+      }
+
+      function applyFilter(term){
+        const t = normalize(term);
+        let shown = 0;
+
+        items.forEach(li => {
+          const text = normalize(li.textContent);
+          const keywords = normalize(li.getAttribute('data-keywords'));
+          const hay = text + ' ' + keywords;
+
+          const match = !t || hay.includes(t);
+          li.classList.toggle('hidden', !match);
+          if (match) shown += 1;
+        });
+
+        sections.forEach(sec => {
+          const visibleInSection = sec.querySelectorAll('[data-item]:not(.hidden)').length;
+          sec.classList.toggle('hidden', visibleInSection === 0);
+        });
+
+        countEl.textContent = String(shown);
+      }
+
+      q.addEventListener('input', () => applyFilter(q.value));
+      clearBtn.addEventListener('click', () => {
+        q.value = '';
+        q.focus();
+        applyFilter('');
+      });
+
+      document.querySelectorAll('.tag[data-fill]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          q.value = btn.getAttribute('data-fill');
+          applyFilter(q.value);
+          q.focus();
+        });
+      });
+
+      applyFilter('');
+    })();
   </script>
 </body>
 </html>
