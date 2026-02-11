@@ -1,12 +1,6 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Strongest anti-caching metas – place these FIRST -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0, proxy-revalidate, no-transform">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>National Resource Guide (US)</title>
@@ -69,9 +63,6 @@
   </style>
 </head>
 <body>
-  <div style="background:#ffd166; color:#000; padding:12px; text-align:center; font-weight:bold; margin-bottom:16px;">
-    If you see old content → <button onclick="window.location.href = window.location.pathname + '?force=' + Date.now()">CLICK HERE to load newest version</button>
-  </div>
   <div class="wrap">
     <header>
       <h1>National Resource Guide (US)</h1>
@@ -141,17 +132,347 @@
         </ul>
       </section>
 
-      <!-- ... (all other sections from your provided content, truncated in prompt but included fully in response) ... -->
+      <section data-section>
+        <h2>Housing and homelessness help</h2>
+        <ul>
+          <li data-item data-keywords="HUD Continuum of Care CoC homelessness shelter rapid rehousing supportive housing">
+            <a class="item-title" href="https://www.hud.gov/hud-partners/community-coc" target="_blank" rel="noopener">HUD: Continuum of Care (CoC)</a>
+            <span class="desc">Local systems that connect people to shelter, rapid rehousing, and supportive housing.</span>
+          </li>
+
+          <li data-item data-keywords="HUD find homeless help resources shelter programs">
+            <a class="item-title" href="https://www.hud.gov/findshelter" target="_blank" rel="noopener">HUD: Find Shelter</a>
+            <span class="desc">Search for shelter and services by location.</span>
+          </li>
+
+          <li data-item data-keywords="HUD housing choice voucher emergency housing voucher EHV">
+            <a class="item-title" href="https://www.hud.gov/helping-americans/housing-choice-vouchers-emergency" target="_blank" rel="noopener">HUD: Emergency Housing Vouchers (EHV)</a>
+            <span class="desc">Voucher program for people experiencing homelessness or at risk (access is typically through local partners).</span>
+          </li>
+
+          <li data-item data-keywords="USICH interagency council homelessness federal coordination">
+            <a class="item-title" href="https://www.usich.gov/" target="_blank" rel="noopener">USICH (US Interagency Council on Homelessness)</a>
+            <span class="desc">Federal agency that coordinates the federal response to homelessness and publishes guidance and resources.</span>
+          </li>
+
+          <li data-item data-keywords="USICH federal guidance resources homelessness prevention">
+            <a class="item-title" href="https://www.usich.gov/guidance-reports-data/federal-guidance" target="_blank" rel="noopener">USICH: Federal guidance and resources</a>
+            <span class="desc">Case studies, fact sheets, and webinar recordings for communities and providers.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Food and basic needs</h2>
+        <ul>
+          <li data-item data-keywords="SNAP food stamps apply benefits USDA">
+            <a class="item-title" href="https://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program" target="_blank" rel="noopener">USDA: SNAP</a>
+            <span class="desc">Food benefits (apply through your state).</span>
+            <div class="meta">State offices: <a href="https://www.fns.usda.gov/snap/state-directory" target="_blank" rel="noopener">SNAP state directory</a></div>
+          </li>
+
+          <li data-item data-keywords="WIC women infants children nutrition">
+            <a class="item-title" href="https://www.fns.usda.gov/wic" target="_blank" rel="noopener">USDA: WIC</a>
+            <span class="desc">Nutrition support for pregnant people, infants, and children (apply locally).</span>
+          </li>
+
+          <li data-item data-keywords="Feeding America food bank pantry">
+            <a class="item-title" href="https://www.feedingamerica.org/find-your-local-foodbank" target="_blank" rel="noopener">Feeding America: Find a food bank</a>
+            <span class="desc">Find local food pantries and food banks.</span>
+          </li>
+
+          <li data-item data-keywords="TANF cash assistance families">
+            <a class="item-title" href="https://www.acf.hhs.gov/ofa/programs/tanf" target="_blank" rel="noopener">HHS: TANF</a>
+            <span class="desc">Cash assistance and support services for eligible families (run by states).</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Health, mental health, recovery</h2>
+        <ul>
+          <li data-item data-keywords="Medicaid health insurance apply">
+            <a class="item-title" href="https://www.medicaid.gov/" target="_blank" rel="noopener">Medicaid.gov</a>
+            <span class="desc">Health coverage information and how to apply (state-based).</span>
+          </li>
+
+          <li data-item data-keywords="HealthCare.gov marketplace insurance">
+            <a class="item-title" href="https://www.healthcare.gov/" target="_blank" rel="noopener">HealthCare.gov</a>
+            <span class="desc">Marketplace coverage options and enrollment.</span>
+          </li>
+
+          <li data-item data-keywords="SAMHSA treatment locator mental health substance use">
+            <a class="item-title" href="https://findtreatment.gov/" target="_blank" rel="noopener">FindTreatment.gov</a>
+            <span class="desc">Locator for mental health and substance use treatment.</span>
+          </li>
+
+          <li data-item data-keywords="SAMHSA hotline national helpline substance use mental health">
+            <a class="item-title" href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" rel="noopener">SAMHSA National Helpline</a>
+            <span class="desc">Confidential help and treatment referrals.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Jobs, training, certifications</h2>
+        <ul>
+          <li data-item data-keywords="American Job Center CareerOneStop jobs resume training WIOA">
+            <a class="item-title" href="https://www.careeronestop.org/LocalHelp/AmericanJobCenters/find-american-job-centers.aspx" target="_blank" rel="noopener">American Job Centers (CareerOneStop)</a>
+            <span class="desc">Job search, resumes, career coaching, and training referrals (including WIOA through local workforce boards).</span>
+          </li>
+
+          <li data-item data-keywords="WIOA workforce innovation opportunity act training grants">
+            <a class="item-title" href="https://www.dol.gov/agencies/eta/wioa" target="_blank" rel="noopener">DOL: WIOA overview</a>
+            <span class="desc">Federal workforce training framework (services delivered locally).</span>
+          </li>
+
+          <li data-item data-keywords="apprenticeship paid apprenticeship training">
+            <a class="item-title" href="https://www.apprenticeship.gov/" target="_blank" rel="noopener">Apprenticeship.gov</a>
+            <span class="desc">Find paid apprenticeships and training programs.</span>
+          </li>
+
+          <li data-item data-keywords="job corps free training youth 16 24 housing">
+            <a class="item-title" href="https://www.jobcorps.gov/" target="_blank" rel="noopener">Job Corps</a>
+            <span class="desc">No-cost education and job training for eligible ages 16 to 24 (often includes housing).</span>
+          </li>
+
+          <li data-item data-keywords="goodwill job training local">
+            <a class="item-title" href="https://www.goodwill.org/jobs-training/" target="_blank" rel="noopener">Goodwill: Jobs and training</a>
+            <span class="desc">Job help and training programs (availability varies by local Goodwill).</span>
+          </li>
+
+          <li data-item data-keywords="coursera financial aid free certificates online">
+            <a class="item-title" href="https://www.coursera.org/" target="_blank" rel="noopener">Coursera</a>
+            <span class="desc">Online courses; some may be low-cost or available via financial aid (check each course).</span>
+          </li>
+
+          <li data-item data-keywords="edx free courses certificates">
+            <a class="item-title" href="https://www.edx.org/" target="_blank" rel="noopener">edX</a>
+            <span class="desc">Online courses; some are free to audit, certificates often paid.</span>
+          </li>
+
+          <li data-item data-keywords="library free linkedin learning">
+            <a class="item-title" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">LinkedIn Learning</a>
+            <span class="desc">Many public libraries provide free access. Ask your local library.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Self sufficient living and simple independence ideas</h2>
+        <ul>
+          <li data-item data-keywords="community garden find a garden ACGA communitygarden.org">
+            <a class="item-title" href="https://www.communitygarden.org/garden" target="_blank" rel="noopener">Find a community garden (ACGA map)</a>
+            <span class="desc">Use the map to find a community garden near you, or to learn how gardens are organized.</span>
+          </li>
+
+          <li data-item data-keywords="community garden education resources ACGA">
+            <a class="item-title" href="https://www.communitygarden.org/resources" target="_blank" rel="noopener">Community garden resources (ACGA)</a>
+            <span class="desc">Guides and links for starting and managing a community garden.</span>
+          </li>
+
+          <li data-item data-keywords="USDA urban agriculture programs">
+            <a class="item-title" href="https://www.usda.gov/urban" target="_blank" rel="noopener">USDA Urban Agriculture Programs</a>
+            <span class="desc">Federal support and education for growing food in cities and small spaces.</span>
+          </li>
+
+          <li data-item data-keywords="microgreens grow microgreens indoor food">
+            <a class="item-title" href="https://extension.psu.edu/microgreens" target="_blank" rel="noopener">Penn State Extension: Microgreens guide</a>
+            <span class="desc">Microgreens basics and how to grow them with minimal equipment.</span>
+          </li>
+
+          <li data-item data-keywords="hydroponics beginner guide small scale hydroponics">
+            <a class="item-title" href="https://extension.umn.edu/how/small-scale-hydroponics" target="_blank" rel="noopener">University of Minnesota Extension: Small-scale hydroponics</a>
+            <span class="desc">Beginner guide for growing plants without soil using water, nutrients, and light.</span>
+          </li>
+
+          <li data-item data-keywords="container vegetable gardening bucket gardening small space">
+            <a class="item-title" href="https://hgic.clemson.edu/factsheet/container-vegetable-gardening/" target="_blank" rel="noopener">Clemson HGIC: Container vegetable gardening</a>
+            <span class="desc">Grow vegetables in pots or buckets when you do not have good soil or space.</span>
+          </li>
+
+          <li data-item data-keywords="seed library free seeds gardening">
+            <a class="item-title" href="https://seedlibraries.weebly.com/" target="_blank" rel="noopener">Seed Library Map</a>
+            <span class="desc">Find seed libraries (often at public libraries) that offer free seeds.</span>
+          </li>
+
+          <li data-item data-keywords="food preservation canning storing food">
+            <a class="item-title" href="https://nchfp.uga.edu/" target="_blank" rel="noopener">National Center for Home Food Preservation</a>
+            <span class="desc">Safe ways to store and preserve food.</span>
+          </li>
+
+          <li data-item data-keywords="foraging wild plants ethics forest service">
+            <a class="item-title" href="https://www.fs.usda.gov/wildflowers/ethics/index.shtml" target="_blank" rel="noopener">US Forest Service: Wildflower ethics</a>
+            <span class="desc">General ethics for protecting native plants and habitats.</span>
+          </li>
+
+          <li data-item data-keywords="foraging permits collecting plants forest service permit">
+            <a class="item-title" href="https://www.fs.usda.gov/wildflowers/ethics/permit.shtml" target="_blank" rel="noopener">US Forest Service: Collection permits</a>
+            <span class="desc">When permits may be required to collect plants or plant material on national forests.</span>
+          </li>
+
+          <li data-item data-keywords="farm tools DIY open source agriculture farmhack">
+            <a class="item-title" href="https://farmhack.org/" target="_blank" rel="noopener">FarmHack</a>
+            <span class="desc">Open community for DIY farm tools, repairs, and low-cost inventions for food growing.</span>
+          </li>
+
+          <li data-item data-keywords="open source housing building plans wikihouse">
+            <a class="item-title" href="https://www.wikihouse.cc/" target="_blank" rel="noopener">WikiHouse</a>
+            <span class="desc">Modular building system with open designs and guides for lower-cost building projects.</span>
+          </li>
+
+          <li data-item data-keywords="open source ecology tools machines DIY self reliance">
+            <a class="item-title" href="https://www.opensourceecology.org/" target="_blank" rel="noopener">Open Source Ecology</a>
+            <span class="desc">Open-source blueprints for practical machines and tools to support self-reliance.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>AI learning and help (free access options)</h2>
+        <ul>
+          <li data-item data-keywords="AI learning chatgpt free help writing resume job search">
+            <a class="item-title" href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT (free sign up option)</a>
+            <span class="desc">Ask for help with plans, resumes, forms, step-by-step checklists, and learning topics.</span>
+          </li>
+
+          <li data-item data-keywords="AI grok free help research">
+            <a class="item-title" href="https://x.ai/grok" target="_blank" rel="noopener">Grok (xAI)</a>
+            <span class="desc">AI assistant for questions, planning, and research-style help.</span>
+          </li>
+
+          <li data-item data-keywords="AI gemini google assistant writing planning">
+            <a class="item-title" href="https://gemini.google.com/" target="_blank" rel="noopener">Google Gemini</a>
+            <span class="desc">AI assistant for writing, planning, brainstorming, and learning.</span>
+          </li>
+
+          <li data-item data-keywords="AI copilot microsoft assistant">
+            <a class="item-title" href="https://copilot.microsoft.com/" target="_blank" rel="noopener">Microsoft Copilot</a>
+            <span class="desc">AI assistant for questions, drafting, and learning support.</span>
+          </li>
+
+          <li data-item data-keywords="AI perplexity search answers citations">
+            <a class="item-title" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity</a>
+            <span class="desc">AI answer engine that can help find sources and summarize information.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Fishing resources (nationwide)</h2>
+        <ul>
+          <li data-item data-keywords="fishing license get a fishing license by state">
+            <a class="item-title" href="https://www.fws.gov/initiative/fishing/purchase-fishing-license" target="_blank" rel="noopener">US Fish and Wildlife Service: Purchase a fishing license</a>
+            <span class="desc">Explains fishing licenses and links to buy licenses (state-based).</span>
+          </li>
+
+          <li data-item data-keywords="fishing license by state takemefishing">
+            <a class="item-title" href="https://www.takemefishing.org/get-your-fishing-license/" target="_blank" rel="noopener">Take Me Fishing: Get your fishing license</a>
+            <span class="desc">State lookup for license basics, where to buy, and rules.</span>
+          </li>
+
+          <li data-item data-keywords="fishing places to fish by state takemefishing">
+            <a class="item-title" href="https://www.takemefishing.org/places-to-boat-and-fish/" target="_blank" rel="noopener">Take Me Fishing: Places to boat and fish</a>
+            <span class="desc">State lookup for fishing locations and regulations.</span>
+          </li>
+
+          <li data-item data-keywords="NOAA permits federal fishing seafood permits">
+            <a class="item-title" href="https://www.fisheries.noaa.gov/permits-and-forms/fishing-seafood" target="_blank" rel="noopener">NOAA Fisheries: Federal fishing permits by region</a>
+            <span class="desc">Federal permit info (mainly for regulated fisheries and reporting by region).</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Veterans</h2>
+        <ul>
+          <li data-item data-keywords="VA homeless veterans housing services">
+            <a class="item-title" href="https://www.va.gov/homeless/" target="_blank" rel="noopener">VA: Homeless Veterans</a>
+            <span class="desc">Housing, health care, and support services for veterans.</span>
+          </li>
+
+          <li data-item data-keywords="877 4AID VET hotline veterans">
+            <a class="item-title" href="https://www.va.gov/homeless/nationalcallcenter.asp" target="_blank" rel="noopener">VA National Call Center for Homeless Veterans</a>
+            <span class="desc">Call 877-4AID-VET (877-424-3838) for help.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Legal help and documents</h2>
+        <ul>
+          <li data-item data-keywords="legal aid find lawyer free civil legal help">
+            <a class="item-title" href="https://www.lsc.gov/about-lsc/what-legal-aid/get-legal-help" target="_blank" rel="noopener">Legal Services Corporation: Find legal aid</a>
+            <span class="desc">Find free or low-cost civil legal help (housing, benefits, family, more).</span>
+          </li>
+
+          <li data-item data-keywords="replace social security card SSA">
+            <a class="item-title" href="https://www.ssa.gov/number-card/replace-card" target="_blank" rel="noopener">SSA: Replace a Social Security card</a>
+            <span class="desc">How to replace or request a Social Security card.</span>
+          </li>
+
+          <li data-item data-keywords="birth certificate vital records replace">
+            <a class="item-title" href="https://www.cdc.gov/nchs/w2w/index.htm" target="_blank" rel="noopener">CDC: Where to write for vital records</a>
+            <span class="desc">How to request birth certificates and other vital records (state-based).</span>
+          </li>
+
+          <li data-item data-keywords="dmv id state identification">
+            <a class="item-title" href="https://www.usa.gov/state-motor-vehicle-services" target="_blank" rel="noopener">USA.gov: State motor vehicle services</a>
+            <span class="desc">Find your state DMV site for ID or drivers license info.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Libraries, internet, phone access</h2>
+        <ul>
+          <li data-item data-keywords="public library find library internet printing">
+            <a class="item-title" href="https://www.publiclibraries.com/" target="_blank" rel="noopener">Find a public library</a>
+            <span class="desc">Libraries often provide internet, printing, computers, and help with job searches.</span>
+          </li>
+
+          <li data-item data-keywords="lifeline phone free cell service low income">
+            <a class="item-title" href="https://www.lifelinesupport.org/" target="_blank" rel="noopener">Lifeline Support</a>
+            <span class="desc">Discount phone or internet service for eligible households.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Start a small business (SBA and free help)</h2>
+        <ul>
+          <li data-item data-keywords="SBA learning platform free courses start a business">
+            <a class="item-title" href="https://www.sba.gov/sba-learning-platform" target="_blank" rel="noopener">SBA Learning Platform</a>
+            <span class="desc">Free online courses to start, pivot, or grow a small business.</span>
+          </li>
+
+          <li data-item data-keywords="SBA local assistance find help counselor SBDC SCORE">
+            <a class="item-title" href="https://www.sba.gov/local-assistance/find" target="_blank" rel="noopener">SBA: Find local assistance</a>
+            <span class="desc">Find free counseling and training partners by ZIP code (SBDC, SCORE, and others).</span>
+          </li>
+
+          <li data-item data-keywords="SCORE free business mentor">
+            <a class="item-title" href="https://www.score.org/" target="_blank" rel="noopener">SCORE</a>
+            <span class="desc">Free business mentoring and workshops (partnered with SBA).</span>
+          </li>
+        </ul>
+      </section>
+
+      <section data-section>
+        <h2>Public lands and outdoor info</h2>
+        <ul>
+          <li data-item data-keywords="US Forest Service fs.usda.gov national forests information">
+            <a class="item-title" href="https://www.fs.usda.gov/" target="_blank" rel="noopener">US Forest Service (home)</a>
+            <span class="desc">Official site for national forests and grasslands, rules, recreation info, and permits.</span>
+          </li>
+        </ul>
+      </section>
 
     </div>
 
     <div class="note">
       Safety note: If you are in immediate danger, call 911. Availability and eligibility vary by location and program. When possible, start with 211 to find local providers.
     </div>
-
-    <footer id="buildInfo" style="text-align:center; color:var(--muted); font-size:0.85rem; margin-top:20px;">
-      Loading last updated...
-    </footer>
   </div>
 
   <script>
@@ -205,176 +526,6 @@
 
       applyFilter('');
     })();
-
-    // Cache-busting reload
-    if (!window.location.search.includes('updated=')) {
-      const timestamp = new Date().getTime();
-      window.location.replace(window.location.pathname + '?updated=' + timestamp);
-    }
   </script>
 </body>
 </html>
-JSON// resources.json
-[
-  {
-    "categoryId": "resource-rails",
-    "title": "211 (United Way)",
-    "area": "National (local listings)",
-    "whoFor": "Anyone needing local help",
-    "provides": "Find local shelters, food, clinics, transit help, and more. Many areas offer phone and web search.",
-    "website": "https://www.211.org/",
-    "tags": ["tonight", "safety", "food", "shelter", "medical", "transport", "urgent"],
-    "sourceLabel": "211.org",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "resource-rails",
-    "title": "findhelp (Aunt Bertha)",
-    "area": "National (local listings)",
-    "whoFor": "Anyone needing local help",
-    "provides": "Search local programs for food, housing, health, jobs, and more by ZIP code.",
-    "website": "https://www.findhelp.org/",
-    "tags": ["tonight", "safety", "food", "shelter", "medical", "transport", "urgent"],
-    "sourceLabel": "findhelp.org",
-    "lastChecked": "2026-02-10"
-  },
-
-  {
-    "categoryId": "youth-runaway",
-    "title": "National Runaway Safeline (NRS)",
-    "area": "National",
-    "whoFor": "Runaway, homeless, and at-risk youth",
-    "provides": "24/7 crisis support, safety planning, and referrals for runaway and homeless youth.",
-    "phone": "18007862929",
-    "website": "https://www.1800runaway.org/",
-    "tags": ["youth", "crisis", "safety", "tonight", "urgent"],
-    "sourceLabel": "1800runaway.org",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "youth-runaway",
-    "title": "FYSB Runaway and Homeless Youth Programs (RHY)",
-    "area": "Federal programs (U.S.)",
-    "whoFor": "Youth needing shelters, outreach, or transitional living programs",
-    "provides": "Federal RHY programs including Basic Center Program (emergency shelters), Transitional Living Program, and Street Outreach.",
-    "website": "https://acf.gov/fysb/programs/runaway-homeless-youth",
-    "tags": ["youth", "safety", "shelter", "support"],
-    "sourceLabel": "acf.gov",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "youth-runaway",
-    "title": "Education for Homeless Children and Youth (McKinney-Vento)",
-    "area": "U.S. (education rights)",
-    "whoFor": "Students experiencing homelessness (including unaccompanied youth)",
-    "provides": "Information and support for education rights and school stability for students experiencing homelessness.",
-    "website": "https://www.ed.gov/grants-and-programs/formula-grants/formula-grants-special-populations/education-homeless-children-and-youths",
-    "tags": ["youth", "legal", "education", "safety"],
-    "sourceLabel": "ed.gov",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "youth-runaway",
-    "title": "Covenant House (Find a shelter)",
-    "area": "National",
-    "whoFor": "Youth experiencing homelessness",
-    "provides": "Shelter and support services for youth. Use their shelter finder to locate help.",
-    "website": "https://www.covenanthouse.org/homeless-shelters",
-    "tags": ["youth", "shelter", "safety", "tonight"],
-    "sourceLabel": "covenanthouse.org",
-    "lastChecked": "2026-02-10"
-  },
-
-  {
-    "categoryId": "lgbtq",
-    "title": "The Trevor Project (LGBTQ+ youth crisis support)",
-    "area": "National",
-    "whoFor": "LGBTQ+ youth (crisis support)",
-    "provides": "24/7 crisis support: call 1-866-488-7386, text START to 678-678, or chat online.",
-    "phone": "18664887386",
-    "website": "https://www.thetrevorproject.org/get-help/",
-    "tags": ["lgbtq", "crisis", "safety", "youth", "urgent", "tonight"],
-    "sourceLabel": "thetrevorproject.org",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "lgbtq",
-    "title": "Ali Forney Center (LGBTQ+ youth housing and support)",
-    "area": "National resources + NYC services",
-    "whoFor": "Homeless LGBTQ+ youth",
-    "provides": "Housing and support resources for homeless LGBTQ+ youth; advocacy and guidance.",
-    "website": "https://www.aliforneycenter.org/",
-    "tags": ["lgbtq", "youth", "shelter", "safety", "support"],
-    "sourceLabel": "aliforneycenter.org",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "lgbtq",
-    "title": "True Colors United (Ending LGBTQ+ youth homelessness)",
-    "area": "National",
-    "whoFor": "Organizations and youth advocates; resource learning",
-    "provides": "Advocacy, training, and resources focused on ending LGBTQ+ youth homelessness.",
-    "website": "https://truecolorsunited.org/",
-    "tags": ["lgbtq", "youth", "safety", "support"],
-    "sourceLabel": "truecolorsunited.org",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "lgbtq",
-    "title": "HUD: Fair Housing Rights (report discrimination)",
-    "area": "U.S. (housing rights)",
-    "whoFor": "People facing housing discrimination",
-    "provides": "Fair housing rights and how to report discrimination (including protections relevant to LGBTQ+ people).",
-    "website": "https://www.hud.gov/helping-americans/fair-housing-act-overview",
-    "tags": ["lgbtq", "legal", "safety", "housing"],
-    "sourceLabel": "hud.gov",
-    "lastChecked": "2026-02-10"
-  },
-
-  {
-    "categoryId": "hygiene-clinics",
-    "title": "NAFC: Find a free or low-cost clinic",
-    "area": "National locator",
-    "whoFor": "Uninsured or underinsured; medical/dental help",
-    "provides": "Locator for free or charitable clinics and pharmacies near you.",
-    "website": "https://nafcclinics.org/find-clinic/",
-    "tags": ["medical", "hygiene", "safety", "health"],
-    "sourceLabel": "nafcclinics.org",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "hygiene-clinics",
-    "title": "The Salvation Army (local help locator)",
-    "area": "National locator",
-    "whoFor": "Anyone needing clothing, hygiene support, or emergency services",
-    "provides": "Find local Salvation Army programs (varies by location).",
-    "website": "https://www.salvationarmyusa.org/location-finder/",
-    "tags": ["hygiene", "clothing", "food", "safety", "tonight"],
-    "sourceLabel": "salvationarmyusa.org",
-    "lastChecked": "2026-02-10"
-  },
-  {
-    "categoryId": "hygiene-clinics",
-    "title": "Goodwill Locator (donation centers, thrift, job support)",
-    "area": "National locator",
-    "whoFor": "Clothing support and job help (varies by area)",
-    "provides": "Locate Goodwill stores, donation sites, and (in some areas) job/career support services.",
-    "website": "https://www.goodwill.org/locator/",
-    "tags": ["clothing", "jobs", "safety"],
-    "sourceLabel": "goodwill.org",
-    "lastChecked": "2026-02-10"
-  },
-
-  {
-    "categoryId": "domestic-violence",
-    "title": "National Domestic Violence Hotline (24/7)",
-    "area": "National",
-    "whoFor": "Anyone experiencing abuse",
-    "provides": "Confidential support, safety planning, and resources. If your device may be monitored, use a safer phone when possible.",
-    "phone": "18007997233",
-    "website": "https://www.thehotline.org/get-help/",
-    "tags": ["dv", "domestic", "safety", "crisis", "urgent", "tonight", "legal"],
-    "sourceLabel": "thehotline.org",
-    "lastChecked": "2026-02-10"
-  }
-]
