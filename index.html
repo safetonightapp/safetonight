@@ -386,23 +386,10 @@ gris<!doctype html>
           </li>
         </ul>
       </section>
-      <section data-section>
-      <h2>How to Guide<h2> now expands/collapses under one button (accordion style).
-      </div>
-      </div>
-       <script>
-    (function(){
-      const q = document.getElementById('q');
-      const clearBtn = document.getElementById('clearBtn');
-      const countEl = document.getElementById('count');
-      const items = Array.from(document.querySelectorAll('[data-item]'));
-      const sections = Array.from(document.querySelectorAll('[data-section]'));
-      const toggleBtn = document.getElementById('howto-toggle');
-      const howtoSection = document.getElementById('howto-section');
-      const guidesContainer = document.getElementById('guides-container');
-
-      const guides = [
-        {
+     <section data-section>
+      <h2>How to Guide<h2>
+      const guides = [
+        {
     "id": "tonight-plan",
     "title": "Tonight Plan (Step-by-step)",
     "topic": "Immediate Safety",
@@ -674,48 +661,6 @@ gris<!doctype html>
     ]
   }
 ]
-        function renderGuides() {
-        if (guidesContainer.children.length > 0) return; // already rendered
-        guides.forEach(guide => {
-          const card = document.createElement('div');
-          card.className = 'guide-card';
-          card.innerHTML = `
-            <div class="guide-header">
-              <h3 class="guide-title">${guide.title}</h3>
-              <span class="guide-meta">${guide.readTime} • ${guide.level} • ${guide.topic}</span>
-            </div>
-            <p class="guide-summary">${guide.summary}</p>
-            <div class="guide-section"><h4>Goal</h4><p>${guide.goal}</p></div>
-            <div class="guide-section">
-              <h4>Time & Cost</h4>
-              <p>Time needed: ${guide.timeNeeded}<br>Materials cost: ${guide.materialsCost}</p>
-            </div>
-            <div class="guide-section">
-              <h4>Steps</h4>
-              <ol class="guide-steps">${guide.steps.map(s => `<li>${s}</li>`).join('')}</ol>
-            </div>
-            <div class="guide-section">
-              <h4>Safety Notes</h4>
-              <ul>${guide.safety.map(s => `<li>${s}</li>`).join('')}</ul>
-            </div>
-            <div class="guide-section">
-              <h4>If You're Stuck</h4>
-              <ul>${guide.ifStuck.map(s => `<li>${s}</li>`).join('')}</ul>
-            </div>
-          `;
-          guidesContainer.appendChild(card);
-        });
-      }
-
-      // Toggle expand/collapse
-      toggleBtn.addEventListener('click', () => {
-        const isExpanded = howtoSection.classList.toggle('expanded');
-        toggleBtn.classList.toggle('active', isExpanded);
-        if (isExpanded) {
-          renderGuides();
-          howtoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
       </section>
       <section data-section>
         <h2>Veterans</h2>
@@ -863,6 +808,7 @@ gris<!doctype html>
   </script>
 </body>
 </html>
+
 
 
 
