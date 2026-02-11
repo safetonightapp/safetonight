@@ -1,4 +1,4 @@
-<!doctype html>
+gris<!doctype html>
 <html lang="en">
 <head>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -386,7 +386,342 @@
           </li>
         </ul>
       </section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>National Resource Guide (US)</title>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#121c2f; --text:#eef3ff; --muted:#b9c3d9; --link:#7cc0ff;
+      --line:#25324d; --accent:#ffd166; --ok:#7CFFB2;
+    }
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.45}
+    .wrap{max-width:980px;margin:0 auto;padding:18px}
+    header{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+    h1{margin:0;font-size:1.4rem}
+    .sub{color:var(--muted);font-size:.95rem}
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .search{
+      flex:1;min-width:220px;display:flex;gap:8px;align-items:center;
+      background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px
+    }
+    .search input{
+      width:100%;border:none;outline:none;background:transparent;color:var(--text);font-size:1rem
+    }
+    .btn{
+      border:1px solid var(--line);background:var(--card);color:var(--text);
+      padding:10px 12px;border-radius:10px;cursor:pointer
+    }
+    .btn:hover{border-color:#3a4a72}
+    .pill{
+      font-size:.85rem;color:var(--muted);border:1px solid var(--line);
+      padding:6px 10px;border-radius:999px;background:rgba(18,28,47,.7)
+    }
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    @media (min-width: 860px){ .grid{grid-template-columns:1fr 1fr} }
+    section{
+      background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px
+    }
+    h2{margin:0 0 10px 0;font-size:1.1rem}
+    ul{margin:0;padding-left:18px}
+    li{margin:10px 0}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .item-title{font-weight:650}
+    .desc{color:var(--muted);display:block;margin-top:2px}
+    .meta{margin-top:6px;color:var(--muted);font-size:.85rem}
+    .meta code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px}
+    .note{
+      margin-top:14px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:12px
+    }
+    .hidden{display:none !important}
+    .sr-only{
+      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0
+    }
+    .quick{
+      display:flex;gap:8px;flex-wrap:wrap;margin-top:6px
+    }
+    .tag{
+      font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);cursor:pointer
+    }
+    .tag:hover{border-color:#3a4a72}
+    .tag.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+    .found{color:var(--ok)}
 
+    /* Expand/collapse guide section */
+    #howto-section {
+      transition: all 0.3s ease;
+    }
+    #guides-container {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+    }
+    #howto-section.expanded #guides-container {
+      max-height: 5000px; /* large enough for all content */
+    }
+    .guide-card {
+      background: rgba(18,28,47,0.6);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .guide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .guide-title {
+      font-size: 1.15rem;
+      font-weight: 650;
+      margin: 0;
+    }
+    .guide-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .guide-summary {
+      color: var(--muted);
+      margin: 8px 0 12px;
+      font-style: italic;
+    }
+    .guide-section {
+      margin: 14px 0;
+    }
+    .guide-section h4 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      color: var(--link);
+    }
+    .guide-steps ol {
+      padding-left: 24px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>National Resource Guide (US)</h1>
+      <div class="sub">
+        Search this page. Type a need like: shelter, food, SNAP, job training, ID, legal, veterans, mental health, 211, microgreens, hydroponics, fishing, AI, how to guide.
+      </div>
+
+      <div class="toolbar" role="search">
+        <div class="search" aria-label="Search resources">
+          <span aria-hidden="true">🔎</span>
+          <label class="sr-only" for="q">Search resources</label>
+          <input id="q" type="search" placeholder="Search resources on this page..." autocomplete="off" />
+        </div>
+        <button class="btn" id="clearBtn" type="button">Clear</button>
+        <span class="pill"><span id="count" class="found">0</span> shown</span>
+      </div>
+
+      <div class="quick" aria-label="Quick filters">
+        <button class="tag" data-fill="housing">Housing</button>
+        <button class="tag" data-fill="shelter">Shelter</button>
+        <button class="tag" data-fill="food">Food</button>
+        <button class="tag" data-fill="SNAP">SNAP</button>
+        <button class="tag" data-fill="jobs">Jobs</button>
+        <button class="tag" data-fill="training">Training</button>
+        <button class="tag" data-fill="ID">ID</button>
+        <button class="tag" data-fill="legal">Legal</button>
+        <button class="tag" data-fill="veterans">Veterans</button>
+        <button class="tag" data-fill="mental health">Mental health</button>
+        <button class="tag" data-fill="microgreens">Microgreens</button>
+        <button class="tag" data-fill="hydroponics">Hydroponics</button>
+        <button class="tag" data-fill="community garden">Community garden</button>
+        <button class="tag" data-fill="fishing">Fishing</button>
+        <button class="tag" data-fill="AI">AI</button>
+        <button class="tag" data-fill="SBA">SBA</button>
+        <button class="tag" id="howto-toggle">How to Guide</button>
+      </div>
+    </header>
+
+    <div class="grid" id="sections">
+
+      <!-- ──────────────────────────────────────────────── -->
+      <!-- Paste ALL your existing resource sections here    -->
+      <!-- (Get help now, Housing, Food, Health, Jobs, etc.) -->
+      <!-- They remain completely unchanged                 -->
+      <!-- ──────────────────────────────────────────────── -->
+
+      <!-- New collapsible How to Guide section -->
+      <section data-section id="howto-section">
+        <h2>How to Guide <span style="font-size:0.9rem; color:var(--muted);">(practical step-by-step plans)</span></h2>
+        <div id="guides-container">
+          <!-- Guide cards inserted by JS -->
+        </div>
+      </section>
+
+    </div>
+
+    <div class="note">
+      Safety note: If you are in immediate danger, call 911. Availability and eligibility vary by location and program. When possible, start with 211 to find local providers.
+    </div>
+
+    <div class="note">
+      Last updated: February 10, 2026<br>
+      Version: 2.2<br>
+      Changes: "How to Guide" now expands/collapses under one button (accordion style).
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const q = document.getElementById('q');
+      const clearBtn = document.getElementById('clearBtn');
+      const countEl = document.getElementById('count');
+      const items = Array.from(document.querySelectorAll('[data-item]'));
+      const sections = Array.from(document.querySelectorAll('[data-section]'));
+      const toggleBtn = document.getElementById('howto-toggle');
+      const howtoSection = document.getElementById('howto-section');
+      const guidesContainer = document.getElementById('guides-container');
+
+      const guides = [
+        {
+          "id": "tonight-plan",
+          "title": "Tonight Plan (Step-by-step)",
+          "topic": "Immediate Safety",
+          "categoryId": "shelter",
+          "readTime": "6-8 min",
+          "level": "Simple",
+          "summary": "A fast checklist for safer sleep, shelter search, and keeping your phone working.",
+          "goal": "Make a safer plan for the next 12 hours.",
+          "timeNeeded": "15-45 minutes",
+          "materialsCost": "Free-$10 (optional: water, snack, charger)",
+          "steps": [
+            "If you are in immediate danger, call 911. If you are in crisis, call/text 988.",
+            "If you have a phone, plug in now or use a public charging spot (library, large stores).",
+            "Call 211 or search findhelp by your ZIP and ask for shelter options for tonight.",
+            "If shelters are full, choose a safer public area: well-lit, visible, near other people, not isolated.",
+            "Tell one trusted person where you are (if safe).",
+            "Keep ID/documents and phone on your body if possible; avoid leaving items unattended.",
+            "In the morning, revisit housing + food options and make a short 3-task plan."
+          ],
+          "safety": [
+            "Avoid isolated areas. Avoid meeting strangers in private places.",
+            "Do not accept rides unless you trust the person and feel safe.",
+            "Trust your instincts - if something feels wrong, leave."
+          ],
+          "ifStuck": [
+            "Use 211 first; ask for 'shelter tonight' and 'meal site tomorrow.'",
+            "Go to a public library and ask for local resource help (public info).",
+            "If you feel unsafe or threatened, call 911."
+          ]
+        },
+        // ────────────────────────────────────────────────
+        // Add the other 9 guide objects here (copy-paste from your original list)
+        // I left only one as example to save space in this message
+        // ────────────────────────────────────────────────
+      ];
+
+      function renderGuides() {
+        if (guidesContainer.children.length > 0) return; // already rendered
+        guides.forEach(guide => {
+          const card = document.createElement('div');
+          card.className = 'guide-card';
+          card.innerHTML = `
+            <div class="guide-header">
+              <h3 class="guide-title">${guide.title}</h3>
+              <span class="guide-meta">${guide.readTime} • ${guide.level} • ${guide.topic}</span>
+            </div>
+            <p class="guide-summary">${guide.summary}</p>
+            <div class="guide-section"><h4>Goal</h4><p>${guide.goal}</p></div>
+            <div class="guide-section">
+              <h4>Time & Cost</h4>
+              <p>Time needed: ${guide.timeNeeded}<br>Materials cost: ${guide.materialsCost}</p>
+            </div>
+            <div class="guide-section">
+              <h4>Steps</h4>
+              <ol class="guide-steps">${guide.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+            </div>
+            <div class="guide-section">
+              <h4>Safety Notes</h4>
+              <ul>${guide.safety.map(s => `<li>${s}</li>`).join('')}</ul>
+            </div>
+            <div class="guide-section">
+              <h4>If You're Stuck</h4>
+              <ul>${guide.ifStuck.map(s => `<li>${s}</li>`).join('')}</ul>
+            </div>
+          `;
+          guidesContainer.appendChild(card);
+        });
+      }
+
+      // Toggle expand/collapse
+      toggleBtn.addEventListener('click', () => {
+        const isExpanded = howtoSection.classList.toggle('expanded');
+        toggleBtn.classList.toggle('active', isExpanded);
+        if (isExpanded) {
+          renderGuides();
+          howtoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      // ────────────────────────────────────────────────
+      // Your existing search/filter logic (unchanged)
+      // ────────────────────────────────────────────────
+      function normalize(s){
+        return (s || '').toLowerCase().trim();
+      }
+
+      function applyFilter(term){
+        const t = normalize(term);
+        let shown = 0;
+
+        items.forEach(li => {
+          const text = normalize(li.textContent);
+          const keywords = normalize(li.getAttribute('data-keywords') || '');
+          const hay = text + ' ' + keywords;
+          const match = !t || hay.includes(t);
+          li.classList.toggle('hidden', !match);
+          if (match) shown++;
+        });
+
+        sections.forEach(sec => {
+          if (sec.id === 'howto-section') return; // we control this separately
+          const visible = sec.querySelectorAll('[data-item]:not(.hidden)').length;
+          sec.classList.toggle('hidden', visible === 0);
+        });
+
+        countEl.textContent = shown;
+      }
+
+      q.addEventListener('input', () => applyFilter(q.value));
+      clearBtn.addEventListener('click', () => {
+        q.value = '';
+        applyFilter('');
+        q.focus();
+      });
+
+      document.querySelectorAll('.tag[data-fill]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (btn.id === 'howto-toggle') return; // handled separately
+          q.value = btn.getAttribute('data-fill');
+          applyFilter(q.value);
+          q.focus();
+        });
+      });
+
+      applyFilter('');
+    })();
+  </script>
+</body>
+</html>
       <section data-section>
         <h2>Veterans</h2>
         <ul>
@@ -533,5 +868,6 @@
   </script>
 </body>
 </html>
+
 
 
