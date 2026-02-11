@@ -386,201 +386,11 @@ gris<!doctype html>
           </li>
         </ul>
       </section>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <title>National Resource Guide (US)</title>
-  <style>
-    :root{
-      --bg:#0b1220; --card:#121c2f; --text:#eef3ff; --muted:#b9c3d9; --link:#7cc0ff;
-      --line:#25324d; --accent:#ffd166; --ok:#7CFFB2;
-    }
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.45}
-    .wrap{max-width:980px;margin:0 auto;padding:18px}
-    header{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-    h1{margin:0;font-size:1.4rem}
-    .sub{color:var(--muted);font-size:.95rem}
-    .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-    .search{
-      flex:1;min-width:220px;display:flex;gap:8px;align-items:center;
-      background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px
-    }
-    .search input{
-      width:100%;border:none;outline:none;background:transparent;color:var(--text);font-size:1rem
-    }
-    .btn{
-      border:1px solid var(--line);background:var(--card);color:var(--text);
-      padding:10px 12px;border-radius:10px;cursor:pointer
-    }
-    .btn:hover{border-color:#3a4a72}
-    .pill{
-      font-size:.85rem;color:var(--muted);border:1px solid var(--line);
-      padding:6px 10px;border-radius:999px;background:rgba(18,28,47,.7)
-    }
-    .grid{display:grid;grid-template-columns:1fr;gap:12px}
-    @media (min-width: 860px){ .grid{grid-template-columns:1fr 1fr} }
-    section{
-      background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px
-    }
-    h2{margin:0 0 10px 0;font-size:1.1rem}
-    ul{margin:0;padding-left:18px}
-    li{margin:10px 0}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .item-title{font-weight:650}
-    .desc{color:var(--muted);display:block;margin-top:2px}
-    .meta{margin-top:6px;color:var(--muted);font-size:.85rem}
-    .meta code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px}
-    .note{
-      margin-top:14px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);padding-top:12px
-    }
-    .hidden{display:none !important}
-    .sr-only{
-      position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0
-    }
-    .quick{
-      display:flex;gap:8px;flex-wrap:wrap;margin-top:6px
-    }
-    .tag{
-      font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);cursor:pointer
-    }
-    .tag:hover{border-color:#3a4a72}
-    .tag.active {
-      background: var(--accent);
-      color: #000;
-      border-color: var(--accent);
-    }
-    .found{color:var(--ok)}
-
-    /* Expand/collapse guide section */
-    #howto-section {
-      transition: all 0.3s ease;
-    }
-    #guides-container {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease-out;
-    }
-    #howto-section.expanded #guides-container {
-      max-height: 5000px; /* large enough for all content */
-    }
-    .guide-card {
-      background: rgba(18,28,47,0.6);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 16px;
-      margin: 16px 0;
-    }
-    .guide-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-    .guide-title {
-      font-size: 1.15rem;
-      font-weight: 650;
-      margin: 0;
-    }
-    .guide-meta {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-    .guide-summary {
-      color: var(--muted);
-      margin: 8px 0 12px;
-      font-style: italic;
-    }
-    .guide-section {
-      margin: 14px 0;
-    }
-    .guide-section h4 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-      color: var(--link);
-    }
-    .guide-steps ol {
-      padding-left: 24px;
-      margin: 8px 0;
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <h1>National Resource Guide (US)</h1>
-      <div class="sub">
-        Search this page. Type a need like: shelter, food, SNAP, job training, ID, legal, veterans, mental health, 211, microgreens, hydroponics, fishing, AI, how to guide.
+      <section data-section>
+      <h2>How to Guide<h2> now expands/collapses under one button (accordion style).
       </div>
-
-      <div class="toolbar" role="search">
-        <div class="search" aria-label="Search resources">
-          <span aria-hidden="true">🔎</span>
-          <label class="sr-only" for="q">Search resources</label>
-          <input id="q" type="search" placeholder="Search resources on this page..." autocomplete="off" />
-        </div>
-        <button class="btn" id="clearBtn" type="button">Clear</button>
-        <span class="pill"><span id="count" class="found">0</span> shown</span>
       </div>
-
-      <div class="quick" aria-label="Quick filters">
-        <button class="tag" data-fill="housing">Housing</button>
-        <button class="tag" data-fill="shelter">Shelter</button>
-        <button class="tag" data-fill="food">Food</button>
-        <button class="tag" data-fill="SNAP">SNAP</button>
-        <button class="tag" data-fill="jobs">Jobs</button>
-        <button class="tag" data-fill="training">Training</button>
-        <button class="tag" data-fill="ID">ID</button>
-        <button class="tag" data-fill="legal">Legal</button>
-        <button class="tag" data-fill="veterans">Veterans</button>
-        <button class="tag" data-fill="mental health">Mental health</button>
-        <button class="tag" data-fill="microgreens">Microgreens</button>
-        <button class="tag" data-fill="hydroponics">Hydroponics</button>
-        <button class="tag" data-fill="community garden">Community garden</button>
-        <button class="tag" data-fill="fishing">Fishing</button>
-        <button class="tag" data-fill="AI">AI</button>
-        <button class="tag" data-fill="SBA">SBA</button>
-        <button class="tag" id="howto-toggle">How to Guide</button>
-      </div>
-    </header>
-
-    <div class="grid" id="sections">
-
-      <!-- ──────────────────────────────────────────────── -->
-      <!-- Paste ALL your existing resource sections here    -->
-      <!-- (Get help now, Housing, Food, Health, Jobs, etc.) -->
-      <!-- They remain completely unchanged                 -->
-      <!-- ──────────────────────────────────────────────── -->
-
-      <!-- New collapsible How to Guide section -->
-      <section data-section id="howto-section">
-        <h2>How to Guide <span style="font-size:0.9rem; color:var(--muted);">(practical step-by-step plans)</span></h2>
-        <div id="guides-container">
-          <!-- Guide cards inserted by JS -->
-        </div>
-      </section>
-
-    </div>
-
-    <div class="note">
-      Safety note: If you are in immediate danger, call 911. Availability and eligibility vary by location and program. When possible, start with 211 to find local providers.
-    </div>
-
-    <div class="note">
-      Last updated: February 10, 2026<br>
-      Version: 2.2<br>
-      Changes: "How to Guide" now expands/collapses under one button (accordion style).
-    </div>
-  </div>
-
-  <script>
+       <script>
     (function(){
       const q = document.getElementById('q');
       const clearBtn = document.getElementById('clearBtn');
@@ -593,43 +403,278 @@ gris<!doctype html>
 
       const guides = [
         {
-          "id": "tonight-plan",
-          "title": "Tonight Plan (Step-by-step)",
-          "topic": "Immediate Safety",
-          "categoryId": "shelter",
-          "readTime": "6-8 min",
-          "level": "Simple",
-          "summary": "A fast checklist for safer sleep, shelter search, and keeping your phone working.",
-          "goal": "Make a safer plan for the next 12 hours.",
-          "timeNeeded": "15-45 minutes",
-          "materialsCost": "Free-$10 (optional: water, snack, charger)",
-          "steps": [
-            "If you are in immediate danger, call 911. If you are in crisis, call/text 988.",
-            "If you have a phone, plug in now or use a public charging spot (library, large stores).",
-            "Call 211 or search findhelp by your ZIP and ask for shelter options for tonight.",
-            "If shelters are full, choose a safer public area: well-lit, visible, near other people, not isolated.",
-            "Tell one trusted person where you are (if safe).",
-            "Keep ID/documents and phone on your body if possible; avoid leaving items unattended.",
-            "In the morning, revisit housing + food options and make a short 3-task plan."
-          ],
-          "safety": [
-            "Avoid isolated areas. Avoid meeting strangers in private places.",
-            "Do not accept rides unless you trust the person and feel safe.",
-            "Trust your instincts - if something feels wrong, leave."
-          ],
-          "ifStuck": [
-            "Use 211 first; ask for 'shelter tonight' and 'meal site tomorrow.'",
-            "Go to a public library and ask for local resource help (public info).",
-            "If you feel unsafe or threatened, call 911."
-          ]
-        },
-        // ────────────────────────────────────────────────
-        // Add the other 9 guide objects here (copy-paste from your original list)
-        // I left only one as example to save space in this message
-        // ────────────────────────────────────────────────
-      ];
-
-      function renderGuides() {
+    "id": "tonight-plan",
+    "title": "Tonight Plan (Step-by-step)",
+    "topic": "Immediate Safety",
+    "categoryId": "shelter",
+    "readTime": "6-8 min",
+    "level": "Simple",
+    "summary": "A fast checklist for safer sleep, shelter search, and keeping your phone working.",
+    "goal": "Make a safer plan for the next 12 hours.",
+    "timeNeeded": "15-45 minutes",
+    "materialsCost": "Free-$10 (optional: water, snack, charger)",
+    "steps": [
+      "If you are in immediate danger, call 911. If you are in crisis, call/text 988.",
+      "If you have a phone, plug in now or use a public charging spot (library, large stores).",
+      "Call 211 or search findhelp by your ZIP (32565) and ask for shelter options for tonight.",
+      "If shelters are full, choose a safer public area: well-lit, visible, near other people, not isolated.",
+      "Tell one trusted person where you are (if safe).",
+      "Keep ID/documents and phone on your body if possible; avoid leaving items unattended.",
+      "In the morning, revisit housing + food options and make a short 3-task plan."
+    ],
+    "safety": [
+      "Avoid isolated areas. Avoid meeting strangers in private places.",
+      "Do not accept rides unless you trust the person and feel safe.",
+      "Trust your instincts - if something feels wrong, leave."
+    ],
+    "ifStuck": [
+      "Use 211 first; ask for 'shelter tonight' and 'meal site tomorrow.'",
+      "Go to a public library and ask for local resource help (public info).",
+      "If you feel unsafe or threatened, call 911."
+    ]
+  },
+  {
+    "id": "food-today",
+    "title": "Food Today (No-cook plan)",
+    "topic": "Food",
+    "categoryId": "food-today",
+    "readTime": "5-7 min",
+    "level": "Simple",
+    "summary": "How to find meals today and assemble safe no-cook food for 24 hours.",
+    "goal": "Get food today and reduce tomorrow's stress.",
+    "timeNeeded": "20-60 minutes",
+    "materialsCost": "Free-$15",
+    "steps": [
+      "Search for 'meal sites' and 'food pantry' using 211 or findhelp with your ZIP.",
+      "Ask specifically: 'What can I get today without an ID?'",
+      "Choose stable foods: peanut butter, tuna packets, crackers, fruit, shelf-stable milk, water.",
+      "If you have a cooler or insulated bag, use it for anything perishable.",
+      "Plan tomorrow morning: identify one pantry/meal time and one backup option."
+    ],
+    "safety": [
+      "Avoid eating food that seems spoiled or has been open.",
+      "Be cautious with food offered by strangers; prioritize known programs."
+    ],
+    "ifStuck": [
+      "Go to a library/community center and search 'food pantry near me' or use 211.",
+      "Ask shelters or outreach teams about meal schedules."
+    ]
+  },
+  {
+    "id": "hygiene-laundry",
+    "title": "Hygiene & Laundry (Low-cost routine)",
+    "topic": "Hygiene",
+    "categoryId": "hygiene",
+    "readTime": "6-8 min",
+    "level": "Simple",
+    "summary": "A practical routine using public facilities and low-cost supplies.",
+    "goal": "Reduce health risk and improve stability.",
+    "timeNeeded": "30-90 minutes weekly",
+    "materialsCost": "$0-$12",
+    "steps": [
+      "Locate a public restroom + handwashing spot you can access daily (library/community center).",
+      "Keep a small kit: wipes, toothbrush, toothpaste, soap, small towel, deodorant.",
+      "Pick one laundry day per week; wash socks/underwear first if you have limited loads.",
+      "If you can't do laundry: rinse and dry socks/underwear; prioritize dryness to prevent skin issues."
+    ],
+    "safety": [
+      "Use public locations. Avoid isolated areas at night.",
+      "If you have wounds or infection signs, seek medical care."
+    ],
+    "ifStuck": [
+      "Use 211/findhelp to locate shower/laundry resources.",
+      "Ask a local shelter/day center about hygiene services."
+    ]
+  },
+  {
+    "id": "id-docs",
+    "title": "Replace ID & Documents (Starter steps)",
+    "topic": "Documents",
+    "categoryId": "id-docs",
+    "readTime": "7-9 min",
+    "level": "Moderate",
+    "summary": "A simple sequence: what to gather, who to contact, and how to track.",
+    "goal": "Start the process to replace key documents.",
+    "timeNeeded": "30-120 minutes to start",
+    "materialsCost": "Varies (fees may apply)",
+    "steps": [
+      "Write down what you need: state ID/driver license, birth certificate, Social Security card.",
+      "Gather any proof you have: old ID photo, mail, hospital record, school record, court document.",
+      "Use 211/findhelp to locate local 'ID assistance' or 'homeless services' that help with paperwork.",
+      "Make a simple folder (paper or phone notes): dates, names, phone numbers, reference numbers."
+    ],
+    "safety": [
+      "Do not share SSN, PINs, or bank info with strangers.",
+      "Use official government sites or trusted nonprofits."
+    ],
+    "ifStuck": [
+      "Go to a library for printing/scanning help.",
+      "Ask a local caseworker/day center about document replacement programs."
+    ]
+  },
+  {
+    "id": "phone-internet",
+    "title": "Phone & Internet Access (Keep it working)",
+    "topic": "Connectivity",
+    "categoryId": "phone-internet",
+    "readTime": "5-7 min",
+    "level": "Simple",
+    "summary": "How to keep phone access stable using Wi-Fi, charging, and official low-cost programs.",
+    "goal": "Maintain communication for services and jobs.",
+    "timeNeeded": "15-30 minutes",
+    "materialsCost": "$0-$15",
+    "steps": [
+      "Find your safe charging spots (library, large stores, day centers).",
+      "Use Wi-Fi at libraries/community centers for job apps and service searches.",
+      "Avoid sharing passwords or letting strangers 'fix' your phone.",
+      "Save key numbers in notes: 211, 988, and a trusted contact."
+    ],
+    "safety": [
+      "Do not hand your unlocked phone to strangers.",
+      "Avoid suspicious 'free phone' offers that request personal data."
+    ],
+    "ifStuck": [
+      "Ask library staff about Wi-Fi access and printing resources.",
+      "Use 211 to ask about phone assistance programs."
+    ]
+  },
+  {
+    "id": "resume-quickstart",
+    "title": "Resume Quickstart + Interview Basics",
+    "topic": "Work",
+    "categoryId": "jobs-income",
+    "readTime": "8-10 min",
+    "level": "Moderate",
+    "summary": "A simple resume format and interview practice steps even if your history is messy.",
+    "goal": "Create a usable resume in one sitting.",
+    "timeNeeded": "45-90 minutes",
+    "materialsCost": "Free",
+    "steps": [
+      "Write your name + phone + email at top (create a stable email if needed).",
+      "List 3 strengths and 5 tasks you can do reliably (cleaning, lifting, customer service, driving, etc.).",
+      "Add work history if you have it; if not, list 'Experience' as tasks and responsibilities.",
+      "Create 1 short explanation for gaps: 'I had family/health challenges; I'm stable now and ready to work.'",
+      "Practice 3 answers: 'Tell me about yourself', 'Why this job', 'Can you work reliably?'"
+    ],
+    "safety": [
+      "Avoid sharing SSN until a legitimate hiring process requires it.",
+      "Meet employers in public places; avoid scams."
+    ],
+    "ifStuck": [
+      "Use a library computer to type and print.",
+      "Ask a local workforce office or nonprofit for resume help."
+    ]
+  },
+  {
+    "id": "microgreens-starter",
+    "title": "Microgreens Starter (Low-cost, safe)",
+    "topic": "Grow Food",
+    "categoryId": "grow-food",
+    "readTime": "8-10 min",
+    "level": "Moderate",
+    "summary": "A simple microgreens method using cheap supplies and basic food safety.",
+    "goal": "Grow edible greens in 7-14 days.",
+    "timeNeeded": "20 minutes setup + daily check",
+    "materialsCost": "$10-$35",
+    "steps": [
+      "Buy seeds meant for microgreens (avoid unknown treated seeds).",
+      "Use a shallow tray + paper towels or safe growing medium.",
+      "Wet the surface, spread seeds, cover lightly for 2-3 days, then uncover for light.",
+      "Mist daily; avoid standing water to reduce mold.",
+      "Harvest with clean scissors; rinse and refrigerate if possible."
+    ],
+    "safety": [
+      "Wash hands and tools before harvesting.",
+      "If you see mold or smell 'off', discard the batch.",
+      "This is educational - follow food safety guidance."
+    ],
+    "ifStuck": [
+      "Start smaller with one tray.",
+      "Look for community gardens or local extension resources."
+    ]
+  },
+  {
+    "id": "safe-income-ideas",
+    "title": "Safe Small-Income Ideas (Legal, low barrier)",
+    "topic": "Income",
+    "categoryId": "jobs-income",
+    "readTime": "6-8 min",
+    "level": "Simple",
+    "summary": "Low-cost ways to earn without high risk or scams.",
+    "goal": "Choose one income idea and do one action today.",
+    "timeNeeded": "30-90 minutes",
+    "materialsCost": "$0-$25",
+    "steps": [
+      "Pick ONE: yard cleanup, car wash (by hand), moving help, cleaning, errands, basic painting prep.",
+      "Create a simple offer sentence: 'I can help with ___ for $___. Available today.'",
+      "Start in safe public channels: community boards, trusted organizations, day-labor centers.",
+      "Track payments and hours in phone notes."
+    ],
+    "safety": [
+      "Avoid isolated jobs. Prefer daylight. Prefer public locations.",
+      "Avoid anyone asking for upfront fees or unusual personal info.",
+      "If it feels unsafe, leave."
+    ],
+    "ifStuck": [
+      "Ask a local nonprofit or workforce office where day labor is safest.",
+      "Use 211/findhelp for employment support programs."
+    ]
+  },
+  {
+    "id": "basic-first-aid",
+    "title": "Basic First Aid (Educational) + When to seek care",
+    "topic": "Health",
+    "categoryId": "safety",
+    "readTime": "7-9 min",
+    "level": "Simple",
+    "summary": "Educational basics and clear guidance on when to get medical help.",
+    "goal": "Reduce infection risk and know when to escalate care.",
+    "timeNeeded": "10-20 minutes",
+    "materialsCost": "$0-$15",
+    "steps": [
+      "Clean small cuts with clean water; cover with a clean bandage if available.",
+      "Keep wounds dry and watch for infection signs: redness spreading, pus, fever, severe pain.",
+      "If you have chest pain, trouble breathing, or severe bleeding: call 911.",
+      "Use 211/findhelp to locate clinics and urgent care resources."
+    ],
+    "safety": [
+      "Educational only. Not medical advice.",
+      "Call 911 for emergencies."
+    ],
+    "ifStuck": [
+      "Ask a clinic/day center about basic care kits.",
+      "If symptoms worsen, seek care immediately."
+    ]
+  },
+  {
+    "id": "personal-safety",
+    "title": "Personal Safety + Avoiding Scams",
+    "topic": "Safety",
+    "categoryId": "safety",
+    "readTime": "6-8 min",
+    "level": "Simple",
+    "summary": "Boundaries, safer choices, and common scam patterns.",
+    "goal": "Reduce risk and keep control of your decisions.",
+    "timeNeeded": "10-15 minutes",
+    "materialsCost": "Free",
+    "steps": [
+      "Keep your phone and documents on your body when possible.",
+      "Meet help in public spaces (library, community center). Avoid private meetups.",
+      "Do not share SSN, bank info, PINs, or login codes.",
+      "Watch for scams: 'pay a fee to get housing', 'I can get you benefits faster', 'give me your phone.'",
+      "If someone pressures you, leave. Trust your instincts."
+    ],
+    "safety": [
+      "If you are threatened, call 911.",
+      "In crisis or emotional distress, call/text 988."
+    ],
+    "ifStuck": [
+      "Ask trusted staff at a shelter/day center about safer options.",
+      "Use 211 for official referrals."
+    ]
+  }
+]
+        function renderGuides() {
         if (guidesContainer.children.length > 0) return; // already rendered
         guides.forEach(guide => {
           const card = document.createElement('div');
@@ -671,57 +716,7 @@ gris<!doctype html>
           howtoSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
-
-      // ────────────────────────────────────────────────
-      // Your existing search/filter logic (unchanged)
-      // ────────────────────────────────────────────────
-      function normalize(s){
-        return (s || '').toLowerCase().trim();
-      }
-
-      function applyFilter(term){
-        const t = normalize(term);
-        let shown = 0;
-
-        items.forEach(li => {
-          const text = normalize(li.textContent);
-          const keywords = normalize(li.getAttribute('data-keywords') || '');
-          const hay = text + ' ' + keywords;
-          const match = !t || hay.includes(t);
-          li.classList.toggle('hidden', !match);
-          if (match) shown++;
-        });
-
-        sections.forEach(sec => {
-          if (sec.id === 'howto-section') return; // we control this separately
-          const visible = sec.querySelectorAll('[data-item]:not(.hidden)').length;
-          sec.classList.toggle('hidden', visible === 0);
-        });
-
-        countEl.textContent = shown;
-      }
-
-      q.addEventListener('input', () => applyFilter(q.value));
-      clearBtn.addEventListener('click', () => {
-        q.value = '';
-        applyFilter('');
-        q.focus();
-      });
-
-      document.querySelectorAll('.tag[data-fill]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (btn.id === 'howto-toggle') return; // handled separately
-          q.value = btn.getAttribute('data-fill');
-          applyFilter(q.value);
-          q.focus();
-        });
-      });
-
-      applyFilter('');
-    })();
-  </script>
-</body>
-</html>
+      </section>
       <section data-section>
         <h2>Veterans</h2>
         <ul>
@@ -868,6 +863,7 @@ gris<!doctype html>
   </script>
 </body>
 </html>
+
 
 
 
